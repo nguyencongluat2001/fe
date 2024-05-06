@@ -1,9 +1,9 @@
 // core overrides
-$system-theme-color:#1976D2;
+$system-theme-color:#249d69;
 $system-theme-color-border: rgb(20, 98, 175);
 
 // Backend color
-$backend-theme-color:#1565C0;
+$backend-theme-color:#12dc51;
 $backend-theme-color-border: rgb(13, 76, 148);
 
 // Header - Navbar
@@ -13,7 +13,7 @@ $navbar-border: (
   bottom: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 )  !default;
 $navbar-brand-width:                  155px !default;
@@ -24,7 +24,7 @@ $navbar-brand-border: (
   bottom: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 
@@ -45,7 +45,7 @@ $navbar-toggler-icon-hover:           str-replace(url("data:image/svg+xml;charse
 
 // Sidebar
 
-$sidebar-width:                       200px !default;
+$sidebar-width:                       250px !default;
 $sidebar-padding:                     0 !default;
 $sidebar-minimized-width:             50px !default;
 $sidebar-minimized-height:            $sidebar-minimized-width !default;
@@ -122,19 +122,19 @@ $sidebar-minimizer-hover-indicator:   str-replace(url("data:image/svg+xml;charse
 // Top Navigation
 
 $top-nav-bg:                          #fff !default;
-// $top-nav-color:                       $body-color !default;
+$top-nav-color:                       $body-color !default;
 $top-nav-borders: (
   bottom: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 $top-nav-ul-borders: (
   all: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 
@@ -149,7 +149,7 @@ $breadcrumb-borders: (
   bottom: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 
@@ -162,7 +162,7 @@ $aside-menu-borders: (
   left: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 
@@ -173,26 +173,26 @@ $aside-menu-nav-padding-x:            1rem !default;
 
 $footer-height:                       50px !default;
 $footer-bg:                           #F5F5F5 !default;
-// $footer-color:                        $body-color !default;
+$footer-color:                        $body-color !default;
 $footer-borders: (
   top: (
     size:                             1px,
     style:                            solid,
-    color:                            rgb(255, 255, 255)
+    color:                            $border-color
   )
 ) !default;
 
 // Cards
 
 $card-icon-bg:                        transparent !default;
-// $card-icon-color:                     $body-color !default;
+$card-icon-color:                     $body-color !default;
 
 // scss-lint:disable all
 // Core Admin Variables
 
 $enable-sidebar-nav-rounded:          false !default;
 
-// black:                        $gray-200 !default;
+$border-color:                        $gray-200 !default;
 $layout-transition-speed:             .25s !default;
 
 
@@ -228,7 +228,7 @@ $layout-transition-speed:             .25s !default;
   }
 }
 
-@mixin  sidebar-width($borders, $width) {
+@mixin sidebar-width($borders, $width) {
   $sidebar-width: $width;
 
   @each $border in $borders {
@@ -246,18 +246,3 @@ $layout-transition-speed:             .25s !default;
     width: $sidebar-width;
   }
 }
-
-//fix
-$navbar-toggler-padding-y : 1;
-$line-height-base: 1;
-$navbar-active-color:1;
-$zindex-sticky: 1;
-$breadcrumb-padding-y:1;
-$spacer:0;
-$footer-color: none;
-$border-color:rgb(255, 255, 255);
-$body-color:none;
-$input-btn-padding-x:0;
-$text-muted:0px;
-$dropdown-header-color: none;
-$grid-gutter-width:1;

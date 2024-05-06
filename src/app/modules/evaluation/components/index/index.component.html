@@ -1,41 +1,74 @@
 <div class="panel panel-default panel-wrapper body-content">
-    <div class="pull-right button-panel">
-      <dx-button (onClick)="add()" id="add" icon="fa fa-plus" text="Thêm"></dx-button>
-      <dx-button (onClick)="evaluation()" id="define" [disabled]="!selectedItems.length || !selectedItem.length" icon="fa fa-sitemap" 
-        text="Quản trị tiêu chí">
-      </dx-button>
-      <dx-button (onClick)="permission()" id="define" [disabled]="!selectedItems.length" icon="fa fa-user" 
-        text="Phân quyền">
-      </dx-button>
-      <dx-button (onClick)="transfer()" id="define" [disabled]="!selectedItems.length" icon="fa fa-share-square-o" 
-        text="Chuyển đơn vị">
-      </dx-button>
-      <dx-button (onClick)="edit()" [disabled]="!selectedItems.length || !selectedItem.length" id="edit" icon="fa fa-pencil-square-o"
-      text="Sửa" ></dx-button>
-      <dx-button (onClick)="delete()" [disabled]="!selectedItems.length || !selectedItem.length" id="delete" icon="fa fa-trash"
-        text="Xóa"></dx-button>
-    </div>
+      <!-- Start Banner Hero -->
+      <section class="bg-light w-100">
+        <div class="">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-12 text-start" >
+                  <h2 class="card-title" style="font-weight: 600;;padding:10px;font-size: 15px !important;font-family: auto;font-size: 20px !important;"><i class="fas fa-dollar-sign"></i> THÔNG TIN KHÁCH HÀNG:</h2>
 
-    <div id="table-container">
-        <div  id="table" class="table-responsive pmd-card pmd-z-depth">
-          <dx-data-grid #grid
-            [dataSource]="Evaluations"
-            [wordWrapEnabled]="true" 
-            (onSelectionChanged)="selectEvaluation($event)"
-      [showRowLines]="true"
-     >
-            <dxo-paging [pageSize]="15"></dxo-paging>
-            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[15, 30, 50]" [showInfo]="true" [visible]="pageEnabled"></dxo-pager>
-              <dxo-selection mode="multiple"></dxo-selection>
-              <dxo-filter-row [visible]="true"></dxo-filter-row>
-              <dxo-header-filter [visible]="true"></dxo-header-filter>
-              <!-- Các cột của bảng -->
-              <dxi-column [width]="500" dataField="name" caption="Danh sách đợt"></dxi-column>
-              <dxi-column  dataField="nameunit" alignment="left" caption="Cấp đơn vị"></dxi-column>
-              <dxi-column  dataField="namecountryside" alignment="left" caption="Loại nông thôn mới"></dxi-column>
-              <dxi-column  dataField="namegiaidoan" alignment="left" caption="Giai đoạn"></dxi-column>
-              <dxi-column [width]="120" dataField="status" [calculateCellValue]="setStatus" alignment="left" caption="Tình trạng"></dxi-column>
-            </dx-data-grid> 
+                    <div class="row g-lg-5">
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4">
+                            <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Họ tên: <span style="font-weight: 600;">MAI THỊ HIỀN</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Giới tính: <span style="font-weight: 600;">NỮ</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                          <!-- Start Recent Work -->
+                          <div class="col-md-4">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Ngày sinh: <span style="font-weight: 600;">20/10/1990</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã số PID:  <span style="font-weight: 600;">2310000235</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                        <!-- Start Recent Work -->
+                        <div class="col-md-4">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã BHYT : <span style="font-weight: 600;">BHYT-0018930</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                          <!-- Start Recent Work -->
+                          <div class="col-md-4">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Số điện thoại: <span style="font-weight: 600;">09876356162</span></h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                          <!-- Start Recent Work -->
+                          <div class="col-md-12">
+                          <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Địa chỉ: <span style="font-weight: 600;">Đông Tiến, Đông Sơn, Thanh Hóa, Việt Nam</span> </h3>
+                          </div>
+                        </div>
+                        <!-- End Recent Work -->
+                    </div>
+                </div>
+            </div>
         </div>
+      </section>
+      <!-- End Banner Hero -->
+      <div class="pull-right button-panel">
+        <dx-button (onClick)="evaluation()" id="define" [disabled]="!selectedItems.length || !selectedItem.length" icon="fa fa-sitemap" 
+          text="Xem kết quả thực tế ảo">
+        </dx-button>
+        <dx-button (onClick)="permission()" id="define" [disabled]="!selectedItems.length" icon="fa fa-user" 
+          text="Xem ảnh">
+        </dx-button>
       </div>
+      
 </div>

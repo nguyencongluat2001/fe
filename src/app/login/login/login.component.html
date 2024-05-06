@@ -1,19 +1,21 @@
 <div id="app-loading"></div>
 <form name="frmLogin" [formGroup]="loginForm">
-    <div style="background: #00000059;height: 100%;">
+    <div style="background: #000000c7;height: 100%;">
+        <div class="clear" style="height: 70px"></div>
+
         <h2 style="color:  #FFFF00;padding-bottom: 5px;">PHÒNG KHÁM ĐA KHOA MEDITEC</h2>
-        <h1 style="color:  #FFFFFF">KHOA CHẨN ĐOÁN HÌNH ẢNH</h1>
+        <h1 style="color: #ffff;font-weight: 700;">KHOA CHUẨN ĐOÁN HÌNH ẢNH</h1>
         <div id="loginShowHide">
-            <div class="clear" style="height: 70px"></div>
             <div class="log" >
+                <div class="clear" style="height: 40px"></div>
                 <div class="content1" >
-                    <h2>CỔNG TRẢ KẾT QUẢ
-                        CHẨN ĐOÁN HÌNH ẢNH</h2>
+                    <h2 style="padding-top: 38px;font-size: 15px;">CỔNG TRẢ KẾT QUẢ
+                        CHUẨN ĐOÁN HÌNH ẢNH</h2>
                     <div style="margin: 20px">
                         <div style="border:1px solid #fff; width: 90%;margin: auto;border-radius: 4px;height: 30px;">
                             <div style="width: 10%;float: left;height: 27px;background: rgba(0, 0, 0, 0.21);padding-top: 3px">
                                 <img src="assets/img/login/person.png" /></div>
-                            <div style="width: 90%;float: right;height: 27px;padding-top: 3px"> <input type="text" class="form-control" formControlName="username" matInput
+                            <div style="width: 90%;float: right;height: 27px;padding-top: 3px"> <input type="text" class="form-control" formControlName="code" matInput
                                 placeholder="Mã bệnh nhân">
                             </div>
                         </div>
@@ -35,11 +37,16 @@
                             </div>
                         </div> -->
     
-                        <div class="button-row">
-                            <input type="button" name="btn_save" id="btn_save" (click)='login()' class="sign-in" value="ĐĂNG NHẬP">
-                            <div class="clear"></div>
-                        </div>
+                       
                     </div>
+                    <div style="margin-left: 40%;margin-right: 40%;padding-bottom: 20px;">
+                        <input style="background: #ffc800;margin: auto;color: #a60000;font-family: serif;" type="button" name="btn_save" id="btn_save" (click)='login()' class="sign-in" value="TRA CỨU">
+                        <div class="clear"></div>
+                    </div>
+                    <!-- <div class="button-row">
+                        <input style="background: #ffc800;margin: auto;" type="button" name="btn_save" id="btn_save" (click)='login()' class="sign-in" value="TRA CỨU">
+                        <div class="clear"></div>
+                    </div> -->
                 </div>
             </div>
         </div>

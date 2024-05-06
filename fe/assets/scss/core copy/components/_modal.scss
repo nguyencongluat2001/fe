@@ -1,0 +1,28 @@
+@each $color, $value in $theme-colors {
+  .modal-#{$color} {
+
+    .modal-content {
+      border-color: $value;
+    }
+
+    .modal-header {
+      color: #fff;
+      background-color: $value;
+    }
+  }
+}
+
+.modal-hg {
+  max-width: 100%;
+  margin: 0px;
+}
+.modal-title{
+  color: #224366;
+  font-weight: 600;
+}
+label{
+  color: #10192a;
+}
+.modal {
+  background: #00000045;
+}

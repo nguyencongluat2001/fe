@@ -28,97 +28,49 @@ export class AppHeaderComponent {
     private modalService: BsModalService,
     private _router: Router,
   ) {
-    let system_infor = JSON.parse(localStorage.getItem('system_infor'));
-    let layout = localStorage.getItem('layout');
-    this.banner_first = JSON.parse(localStorage.getItem('unit_infor'))['name'].toUpperCase() + ' TỈNH YÊN BÁI';
-    this.banner_second = system_infor.bannerSecond;
-    this.system = true;
-    this.class_header = 'app-header-system';
-    this.role = JSON.parse(localStorage.getItem('user_infor'))['role'];
-    this.nameuser = JSON.parse(localStorage.getItem('user_infor'))['name'];
-    let sidebar_parindex = JSON.parse(localStorage.getItem('arrController'));
-    // let sidebar_report = JSON.parse(localStorage.getItem('arrreport'));
-    // let sidebar_sociological = JSON.parse(localStorage.getItem('arrSociological'));
-    // let sidebar_sipas = JSON.parse(localStorage.getItem('arrSipas'));
-    let sidebar_system = JSON.parse(localStorage.getItem('arrsystem'));
-    var code = ''; let idouble = '';
-    if (localStorage.getItem('currentProject') == '') {
-      localStorage.setItem('currentProject', 'eparindex');
-    }
-    if(sidebar_parindex.length > 0){
-      this.checkEparindex = true;
-    }
+    // let system_infor = JSON.parse(localStorage.getItem('system_infor'));
+    // let layout = localStorage.getItem('layout');
+    // this.banner_first = JSON.parse(localStorage.getItem('unit_infor'))['name'].toUpperCase() + ' TỈNH YÊN BÁI';
+    // this.banner_second = system_infor.bannerSecond;
+    // this.system = true;
+    // this.class_header = 'app-header-system';
+    // this.role = JSON.parse(localStorage.getItem('user_infor'))['role'];
+    // this.nameuser = JSON.parse(localStorage.getItem('user_infor'))['name'];
+    // let sidebar_parindex = JSON.parse(localStorage.getItem('arrController'));
+    // let sidebar_system = JSON.parse(localStorage.getItem('arrsystem'));
+    // var code = ''; let idouble = '';
+    // if (localStorage.getItem('currentProject') == '') {
+    //   localStorage.setItem('currentProject', 'eparindex');
+    // }
+    // if(sidebar_parindex.length > 0){
+    //   this.checkEparindex = true;
+    // }
     // if(sidebar_sociological.length > 0){
     //   this.checkSociological = true;
     // }
     // if(sidebar_sipas.length > 0){
     //   this.checkSipas = true;
     // }
-    sidebar_parindex.forEach(element => {
-      if (element.children) {
-        element.children.forEach(child => {
-          if (this._router.url.search(child.url) > 0) {
-            code = 'eparindex';
-          }
-        })
-      } else {
-        if (this._router.url.search(element.url) > 0) {
-          code = 'eparindex';
-        }
-      }
+    // sidebar_parindex.forEach(element => {
+    //   if (element.children) {
+    //     element.children.forEach(child => {
+    //       if (this._router.url.search(child.url) > 0) {
+    //         code = 'eparindex';
+    //       }
+    //     })
+    //   } else {
+    //     if (this._router.url.search(element.url) > 0) {
+    //       code = 'eparindex';
+    //     }
+    //   }
 
-    });
-    // sidebar_report.forEach(element => {
-    //   if (element.children) {
-    //     element.children.forEach(child => {
-    //       if (this._router.url.search(child.url) > 0) {
-    //         if (code == 'eparindex') {
-    //           idouble = 'CA2';
-    //         }
-    //         code = 'ereport';
-    //       }
-    //     })
-    //   } else {
-    //     if (this._router.url.search(element.url) > 0) {
-    //       if (code == 'eparindex') {
-    //         idouble = 'CA2';
-    //       }
-    //       code = 'ereport';
-    //     }
-    //   }
     // });
-    // sidebar_sociological.forEach(element => {
-    //   if (element.children) {
-    //     element.children.forEach(child => {
-    //       if (this._router.url.search(child.url) > 0) {
-    //         code = 'sociological';
-    //       }
-    //     })
-    //   } else {
-    //     if (this._router.url.search(element.url) > 0) {
-    //       code = 'sociological';
-    //     }
-    //   }
-    // });
-    // sidebar_sipas.forEach(element => {
-    //   if (element.children) {
-    //     element.children.forEach(child => {
-    //       if (this._router.url.search(child.url) > 0) {
-    //         code = 'sipas';
-    //       }
-    //     })
-    //   } else {
-    //     if (this._router.url.search(element.url) > 0) {
-    //       code = 'sipas';
-    //     }
-    //   }
-    // });
-    if (idouble != '') {
-      code = localStorage.getItem('currentProject');
-    } else {
-      localStorage.setItem('currentProject', code)
-    }
-    this.setActiveHeader(code);
+    // if (idouble != '') {
+    //   code = localStorage.getItem('currentProject');
+    // } else {
+    //   localStorage.setItem('currentProject', code)
+    // }
+    // this.setActiveHeader(code);
   }
 
   changePassword() {

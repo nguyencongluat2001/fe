@@ -1,48 +1,25 @@
 <header class="app-header navbar {{class_header}}">
-  <button class="navbar-toggler d-md-down-none mr-auto" type="button" appSidebarMinimizer appMobileSidebarToggler>
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <img style="width: 8%;" src="assets/img/logo.png" class="img-avatar" alt="admin@bootstrapmaster.com" />
+
   <div class="hty-header-banner d-md-down-none">
-    <p class="first-text">{{banner_first}}</p>
-    <p class="second-text">{{banner_second}}</p>
+    <span style="color:aliceblue;font-size:22px;font-weight: 600;">KHOA CHẨN ĐOÁN HÌNH ẢNH</span>
   </div>
   <ul class="nav navbar-nav ml-auto" style="margin-right: 12px;">
-    <li *ngIf="checkSociological">
-      <span class="nav-text {{arrActive['sociological']}}" (value)="selected" (click)="selectSociological()">Điều tra XHH</span>
-    </li>
-    <li *ngIf="checkSipas">
-      <span class="nav-text {{arrActive['sipas']}}" (value)="selected" (click)="selectSipas()">Chỉ số Sipas</span>
-    </li>
-    <li *ngIf="checkEparindex">
-      <span style="background-color: #ffcd4a; padding: 10px 10px 10px 10px; color: #bb0000; font-weight: 600;" class="nav-text {{arrActive['eparindex']}}" (value)="selected" (click)="selecteparindex()">Chỉ số CCHC</span>
-    </li>
-    <!-- <li>
-      <span class="nav-text {{arrActive['ereport']}}" (value)="selected" (click)="selectereport()">Báo cáo CCHC</span>
-    </li> -->
     <li class="nav-item dropdown" dropdown placement="bottom right">
-      <div class="infor-user">
-        <button style="height: 60px; width: 300px" mat-icon-button [matMenuTriggerFor]="profile">
-          <img src="assets/img/avatars/man.png" class="img-avatar" alt="admin@bootstrapmaster.com" />
-          <span style="font-size:15px"> {{nameuser}}</span>
-        </button>
-        <mat-menu #profile="matMenu" [overlapTrigger]="false">
-          <button mat-menu-item>
-            <span *ngIf="role=='1'||role=='2'" class="dropdown-item" (click)="selectesystem()">
-              <i class="fa fa-shield"></i> Quản trị hệ thống</span>
-          </button>
-          <button mat-menu-item>
-            <a class="dropdown-item" (click)="changePassword()">
-              <i class="fa fa-shield"></i> Đổi mật khẩu</a>
-          </button>
-          <button mat-menu-item>
-            <a class="dropdown-item" (click)="logout()">
-              <i class="fa fa-lock"></i> Thoát</a>
-          </button>
-        </mat-menu>
+      <div class="infor-user" style="display: flex;">
+          <div>
+            <button mat-menu-item>
+              <a class="dropdown-item" (click)="changePassword()">
+                <i class="fa fa-shield"></i> Đổi mật khẩu</a>
+            </button>
+          </div>
+          <div>
+            <button mat-menu-item>
+              <a class="dropdown-item" (click)="logout()">
+                <i class="fa fa-lock"></i> Thoát</a>
+            </button>
+          </div>
       </div>
     </li>
-    <!--<button class="navbar-toggler d-md-down-none" type="button" appAsideMenuToggler>
-    <span class="navbar-toggler-icon"></span>
-  </button>-->
   </ul>
 </header>
