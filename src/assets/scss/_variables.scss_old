@@ -1,0 +1,55 @@
+// Responsive
+$max-width-600: "(max-width: 600px) and (orientation: portrait)";
+$max-width-960: "(max-width: 960px) and (orientation: portrait)";
+
+//---------------- Declare root color ------------
+:root {
+    --primary: #3292f2;
+    --color_navabar: #192433;
+    --color-font-primary: #FAFAFA;
+    --header-first-text: #ff0;
+}
+
+// -------------- Variables Color -----------------
+$primary: #293a52;
+$second-color: rgb(243, 105, 0);
+$color-font-primary: var(--color-font-primary);
+$themes-color: #439bce;
+$background-color: #ecf0f5;
+// Header
+$header-first-text: var(--header-first-text);
+$header-second-text: $color-font-primary;
+$color_navabar: var(--color_navabar);
+// Sidenav
+$background-sidebar: #F7F7F7;
+$background-color__sidenav-list: $color-font-primary;
+$color__sidenav-list: #333;
+$background-color__sidenav-toolbar: #272B35;
+
+// ------------- Variables Fontside ----------------
+$size-default: 16px;
+$size-titled: 17px;
+
+$background-color-level: darken(#FAFAFA, 2.5);
+$background-sidebar-hover: darken(#FAFAFA, 2.5);
+$background-sidebar-active: darken(#FAFAFA, 2.5);
+
+$padding__sidenav-item__level2: 10px;
+$padding__sidenav-item__level3: 20px;
+$padding__sidenav-item__level4: 30px;
+$padding__sidenav-item__level5: 40px;
+$padding__sidenav-item__level6: 40px;
+
+$width__sidenav: 250px;
+
+$padding-left-right__sidenav-list__mat-list-item: 24px;
+$margin-left__sidenav-list__item-name: $padding-left-right__sidenav-list__mat-list-item;
+$width-height__sidenav-list__icon: 18px;
+
+$max-width__icon-sidenav: ($padding-left-right__sidenav-list__mat-list-item * 2)+$width-height__sidenav-list__icon+2;
+
+$z-index__mat-sidenav: 4;
+$z-index__mat-sidenav-content: 5;
+$z-index__main-toolbar: 500;
+
+$height__main-toolbar: 64px;

@@ -1,0 +1,7 @@
+<div *ngIf='show'>
+    <div *ngFor="let file of array">
+        <img src='assets/img/icons/attach_file.gif ' />
+        <a style="color:dodgerblue;cursor:pointer;word-break: break-word;" (click)="openfile(file.filenameFull)">{{file.fileName}}</a>
+        <!-- <a [href]="file.urlFile" download>{{file.fileName}}</a> -->
+    </div>
+</div>

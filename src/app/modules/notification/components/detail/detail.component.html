@@ -1,0 +1,61 @@
+
+<div class="modal-header" style="background-color: #1976D2; height: 50px;">
+  <h2 class="modal-title" style="color: white; font-family: 'Times New Roman', Times, serif; font-size: 16px; text-align: center;">CHI TIẾT THÔNG BÁO</h2>
+  <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+    <i class="fa fa-times" aria-hidden="true"></i>
+  </button>
+</div>
+<div class="modal-body">
+    <div class="container">
+      <!-- <div class="row"> -->
+
+      <table class="table table-bordered " style="border-top: 1px solid White;">
+        <tr>
+          <td colspan="2">
+              <h2 class="modal-title" style="font-size: 20px; font-family: 'Times New Roman', Times, serif; color: #333;">
+                  {{title}}</h2>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+                      <div  [innerHtml]="html" style="color: #333"></div>
+          </td>
+        </tr>
+        <tr>
+            <td><span style=" color: #333;font-size: 14px;"><p>File đính kèm</p></span></td>
+            <td><div *ngFor="let file of document">
+                <img src='assets/img/icons/attach_file.gif ' />
+                <a style="color:dodgerblue;cursor:pointer;font-size: 14px;font-family:
+                'Arial';" (click)="openfile(file.filenameFull)">{{file.fileName}}</a>
+                <!-- <a [href]="file.urlFile" download>{{file.fileName}}</a> -->
+            </div></td>
+          </tr>
+          <tr></tr>
+          <tr style=" color: #333;font-size: 14px;">
+            <td ><p>Ngày gửi</p></td>
+            <td> <p>{{data_time | date:'dd/MM/yyyy'}}</p></td>
+          </tr>
+          <tr></tr>
+          <tr style=" color: #333;font-size: 14px;">
+              <td ><p>Người gửi</p></td>
+              <td><p>{{nameuser}}</p> </td>
+            </tr>
+            <tr style=" font-size: 14px;color: #333" *ngIf="role_id==1 || role_id==9 ">
+              <td ><p>Đơn vị được gửi</p></td>
+              <td>
+                <dx-tree-view id="selection-treeview" [items]="users" [width]="320" style="font-size: 14px;font-family:
+                'Arial';">
+                </dx-tree-view>
+              </td>
+            </tr>
+
+      </table>
+    <!-- </div> -->
+      
+</div>
+</div>
+<div class="modal-footer">
+  <dx-button text="Đóng" (click)="bsModalRef.hide()" class="btn btn-primary">
+  </dx-button>
+
+</div>

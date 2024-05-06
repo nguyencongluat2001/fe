@@ -1,0 +1,140 @@
+<div id="app-loading"></div>
+<form id="answer_question" *ngIf="checkAnswer === true"
+  style="max-width: 85vw; margin: auto; border: 1px solid #ccc; margin-top: 1rem">
+  <div class="row">
+    <div class="col-md-9" id="body-data" style="overflow-y: scroll; max-height: 84vh; margin-top: 1rem;">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <p class="title1">UBND TỈNH YÊN BÁI<br><u>SỞ NÔNG NGHIỆP</u></p>
+        </div>
+        <div class="col-md-6 text-center">
+          <p class="title1">Mẫu phiếu số: {{dataTab.id}}</p>
+        </div>
+      </div>
+      <br>
+      <div class="row text-center">
+        <div class="namevote col-md-12">
+          <p>
+            <span class="text-uppercase title1">PHIẾU KHẢO SÁT</span><br>
+            <span class="text-uppercase title1" [(innerHTML)]="dataTab.title"></span><br>
+            <span class="title1" [innerHTML]="dataTab.title_desc"></span>
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="descvote">
+        <p class="text-indent text-justify text-votedesc">{{dataTab.desc}}</p>
+        <p class="text-indent" *ngIf="dataTab.code != 'MAU_PHIEU_05' && dataTab.code != 'MAU_PHIEU_06'">Xin ông (bà)/quý cơ quan đánh dấu (x) vào ô tương ứng từ câu hỏi số 01 đến câu hỏi số 10.</p>
+        <p class="text-indent" *ngIf="dataTab.code == 'MAU_PHIEU_05' || dataTab.code == 'MAU_PHIEU_06'">(Khoanh tròn vào ô lựa chọn với đánh giá theo mức tương ứng)</p>
+        <p class="text-indent">Xin trân trọng cảm ơn ông (bà)/quý cơ quan!</p>
+      </div>
+      <br>
+      <div>
+        <div *ngFor="let item of Question, index as i">
+          <div id="cau_so_{{i + 1}}" class="scrollView">
+            <div class="row" class="question" *ngIf="item['listoption'].length > 0">
+              <div class="question-top"><b>{{item.name}}</b></div>
+            </div>
+            <div class="row" class="answer" *ngIf="item['listoption'].length > 0">
+              <table id="table-data" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col" rowspan="3">STT</th>
+                    <th scope="col" rowspan="3">Cơ quan, đơn vị</th>
+                    <th scope="col" [attr.colspan]="item['countAnswer']">Mức độ</th>
+                  </tr>
+                  <tr>
+                    <th *ngFor="let itemList of item['listoption']" style="border-bottom: unset;">
+                      <span>{{ itemList.name }}</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th *ngFor="let itemOption of item['listoption']" class="checkAll" style="border-top: unset;" [attr.width]="(60/item['countAnswer']) + '%'">
+                      <label class="container-check">
+                        <span *ngIf="checkAll(itemOption); else elseCheck">
+                          <input type="radio" name="checkAll_{{itemOption.question_id}}" checked
+                            (click)="checkbox_all_item_id($event, itemOption.code, itemOption.question_id)"
+                            >
+                          <span class="checkmark"></span>
+                        </span>
+                        <ng-template #elseCheck>
+                          <input type="radio" name="checkAll_{{itemOption.question_id}}"
+                            id="checkAll_{{itemOption.question_id}}_{{itemOption.code}}"
+                            (click)="checkbox_all_item_id($event, itemOption.code, itemOption.question_id)"
+                            [attr.disabled]="status"
+                            >
+                          <span class="checkmark"></span>
+                        </ng-template>
+                      </label>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let unit of arrUnit; index as i">
+                    <td align="center">{{ i + 1 }}</td>
+                    <td>{{ unit.name }}</td>
+                    <td *ngFor="let itemOption of item['listoption']" align="center">
+                      <label class="container-check">
+                        <span *ngIf="isChecked(unit.code, itemOption.ownercode); else elseBlock">
+                          <input type="radio" class="checked_item {{itemOption.code}}_{{itemOption.question_id}}"
+                            checked (change)="changeExcute(itemOption.question_id, unit.code)"
+                            [(value)]="itemOption.code" name="{{itemOption.question_id}}_{{unit.code}}">
+                          <span class="checkmark"></span>
+                        </span>
+                        <ng-template #elseBlock>
+                          <input type="radio" class="checked_item {{itemOption.code}}_{{itemOption.question_id}}"
+                            (change)="changeExcute(itemOption.question_id, unit.code)" [(value)]="itemOption.code"
+                            (click)="isSelected(itemOption.question_id, unit.code, itemOption.code)"
+                            id="{{itemOption.question_id}}_{{unit.code}}_{{itemOption.code}}"
+                            name="{{itemOption.question_id}}_{{unit.code}}"
+                            [attr.disabled]="status"
+                            >
+                          <span class="checkmark"></span>
+                        </ng-template>
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 listQuestion">
+      <div class="row mucluc">
+        <div class="col-md-6 display-flex">
+          <p><b>Mục lục</b></p>
+        </div>
+        <!-- <div class="col-md-6 display-flex display-right" style="padding-right: 2rem;" *ngIf="!checkTimeOut">
+          <dx-button type="default" [text]="times" class="button-timer"></dx-button>
+        </div> -->
+      </div>
+      <div *ngFor="let item of Question, index as i">
+        <a style="cursor: pointer;-webkit-box-orient: vertical;" class="itemListQuestion "
+          [class.success]="checkAnswerSucess(item) == item.id" (click)="scrollView(i + 1)"
+          *ngIf="item['listoption'].length > 0">Câu số {{ i + 1 }}. <span *ngIf="checkAnswerSucess(item) == item.id">Đã trả lời</span></a>
+        <!-- [class.success]="answerSucess == item.id || checkAnswerSucess(item.id) == item.id || hasClassSuccess(item.id)" -->
+      </div>
+      <div *ngIf="saveAnswer && checkTimeOut" class="send-success">
+        <b><p class="text-uppercase" style="font-size: 15px;">Phiếu khảo sát đã gửi thành công!</p></b>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <dx-button text="Gửi" type="default" (click)="onSubmit($event, false)" *ngIf="!saveAnswer">
+    </dx-button>
+    <dx-button text="Gửi & Ký số" type="default" (click)="onSubmit($event, true)" *ngIf="!saveAnswer">
+    </dx-button>
+    <dx-button text="In" type="default" (click)="print()">
+    </dx-button>
+    <!-- <dx-button text="Quay lại" (click)="goback()">
+    </dx-button> -->
+  </div>
+</form>
+
+<div *ngIf="checkAnswer === false" class="answer">
+  <div style="height: 100%; text-align: center; font-size: 30px;">
+    <h2 style="padding-top: 30px"><b>Phiếu không hợp lệ!</b></h2>
+  </div>
+</div>

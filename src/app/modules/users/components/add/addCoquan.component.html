@@ -1,0 +1,69 @@
+
+<form (submit)="onSubmit($event)" action="">
+    <div class="modal-header">
+        <h2 class="modal-title">Đối tượng đơn vị</h2>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <dx-form validationGroup="userData" [colCount]="1" [formData]="agencys" [readOnly]="false" [showColonAfterLabel]="true" [showValidationSummary]="true">
+            <dxi-item itemType="group">
+                <dxi-item class="unit" [editorOptions]="{ disabled: true}" [label]="{text: 'Thuộc đơn vị'}" dataField="nameParent"></dxi-item>
+            </dxi-item>
+            <dxi-item itemType="group" [colCount]="2">
+                <dxi-item itemType="group">
+                    <dxi-item dataField="capdonvi" editorType="dxSelectBox" [label]="{text: 'Cấp đơn vị'}" [editorOptions]="{ dataSource: capdonvi,displayExpr: 'name',valueExpr: 'code',tabIndex: 1 }"></dxi-item>
+                    <dxi-item [label]="{text: 'Tên đơn vị'}" dataField="name" [editorOptions]="{tabIndex: 3}">
+                        <dxi-validation-rule type="required" message="Tên đơn vị không được để trống">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item [label]="{text: 'Số điện thoại'}" dataField="phone_number"  [editorOptions]="{tabIndex: 5}"></dxi-item>
+                    <dxi-item [label]="{text: 'Website'}" dataField="website"  [editorOptions]="{tabIndex: 7}"></dxi-item>
+                    <dxi-item [label]="{text: 'Trạng thái'}" dataField="status" editorType="dxCheckBox" [editorOptions]="{ text: 'Hoạt động',tabIndex: 9}"></dxi-item>
+                </dxi-item>
+                <dxi-item itemType="group">
+                    <dxi-item [label]="{text: 'Mã đơn vị'}" dataField="code" [editorOptions]="{tabIndex: 2}">
+                        <dxi-validation-rule type="required" message="Mã đơn vị không được để trống">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    
+                    <dxi-item [label]="{text: 'Fax'}" dataField="fax"  [editorOptions]="{tabIndex: 4}"></dxi-item>
+                    <dxi-item [label]="{text: 'Email'}" dataField="email" [editorOptions]="{tabIndex: 6}"></dxi-item>
+                    <dxi-item [label]="{text: 'Thứ tự hiển thị'}" dataField="order" [editorOptions]="{tabIndex: 8}"></dxi-item>
+                </dxi-item>
+            </dxi-item>
+            <dxi-item itemType="group">
+                <dxi-item [label]="{text: 'Địa chỉ'}" dataField="address" [editorOptions]="{tabIndex: 10}"></dxi-item>
+            </dxi-item>
+            <dxi-item itemType="group"><label style="color:#1976D2">Thông tin mẫu in</label></dxi-item>
+            <dxi-item itemType="group" [colCount]="2">
+                <dxi-item itemType="group">
+                    <dxi-item [label]="{text: 'Đơn vị chủ quản'}" dataField="donvichuquan" [editorOptions]="{tabIndex: 11}"></dxi-item>
+                    <dxi-item [label]="{text: 'Tên viết hoa'}" dataField="report_uppercase" [editorOptions]="{tabIndex: 13}"></dxi-item>
+                </dxi-item>
+                <dxi-item itemType="group">
+                    <dxi-item [label]="{text: 'Người liên hệ'}" dataField="contact" [editorOptions]="{tabIndex: 12}"></dxi-item>
+                    <dxi-item [label]="{text: 'Tên viết thường'}" dataField="report_lowercase" [editorOptions]="{tabIndex: 14}"></dxi-item>
+                </dxi-item>
+            </dxi-item>
+            <dxi-item itemType="group">
+                <dxi-item [label]="{text: 'Địa danh'}" dataField="diadanh" [editorOptions]="{tabIndex: 15}"></dxi-item>
+            </dxi-item>
+        </dx-form>
+    </div>
+    <div class="modal-footer">
+        <!-- tabIndex="16" -->
+        <dx-button
+            text="Ghi"
+            
+            type="default"
+            validationGroup="userData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <dx-button
+            text="Quay lại"
+            (click)="bsModalRef.hide()">
+        </dx-button>
+    </div>
+</form>

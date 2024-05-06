@@ -1,0 +1,495 @@
+.spanfooter{
+    font-size: 12px;
+    color: #ffffff;
+}
+.spannhat{
+    font-size: 12px;
+    color: #e0e0e0;
+}
+form[name='frmLogin'] input[type="text"]::-webkit-input-placeholder {
+    color: #ffffff;
+    font-size: 12px;
+}
+form[name='frmLogin'] input[type="password"]::-webkit-input-placeholder {
+    color: #ffffff;
+    font-size: 12px;
+}
+/*--- reset code ---*/
+form[name='frmLogin'] label{
+    color: #fff;
+}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin:0;
+}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol,ul {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+}
+blockquote,q {
+    quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after {
+    content:'';
+    content:none;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* start editing from here */
+a {
+    text-decoration:none;
+}
+.txt-rt {
+    text-align:right;
+}/* text align right */
+.txt-lt {
+    text-align:left;
+}/* text align left */
+.txt-center {
+    text-align:center;
+    /*-- W3Layouts --*/	
+}/* text align center */
+.float-rt {
+    float:right;
+}/* float right */
+.float-lt {
+    float:left;
+}/* float left */
+.clear {
+    clear:both;
+}/* clear float */
+.pos-relative {
+    position:relative;
+}/* Position Relative */
+.pos-absolute {
+    position:absolute;
+}/* Position Absolute */
+.vertical-base {	
+    vertical-align:baseline;
+}/* vertical align baseline */
+.vertical-top {	
+    vertical-align:top;
+}/* vertical align top */
+nav.vertical ul li {	
+    display:block;
+}/* vertical menu */
+nav.horizontal ul li {	
+    display: inline-block;
+}/* horizontal menu */
+img {
+    max-width:100%;
+    max-height: 100%
+}
+form[name='frmLogin'] {
+    height:100vh;
+    background:url(/assets/img/login/background.jpg) no-repeat;
+    /*background-attachment:fixed;*/
+    background-position:center;
+    /*background-size:cover;*/
+    background-size: 100% auto;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    object-fit: cover;
+    font-family: 'Muli', sans-serif;
+}
+.clear {
+    clear:both;
+}
+/*-- AgileITS --*/
+h1 {
+    text-align:center;
+    font-size:32px;
+    font-weight: bold;
+    color:#b53310;
+    text-transform:uppercase;
+}
+h2 {
+    font-weight: bold;
+    text-align:center;
+    font-size: 24px;
+    color:#b53310;
+    padding-top:30px;
+    text-transform:uppercase;
+    /*font-weight: 300;*/
+}
+.log .content1 h2 {
+    font-size:24px;
+    color:#fff;
+    font-weight: 300;
+    font-family: 'Nunito', sans-serif;
+    text-align:center;
+}
+
+.log {
+    width:75%;
+    margin:0 auto;
+
+}
+.content1 {
+    width: 43%;
+    text-align: center;
+    /*padding: 30px 0;*/
+    background-color: rgba(0, 0, 0, 0.21);
+    margin: auto;
+    border-radius: 10px!important;
+    border-radius: 0px;
+}
+.content1 input[type="text"] {
+    margin-top: -4px;
+    height: 29px;
+    width:100%;
+    border:1px solid rgba(0, 0, 0, 0);
+    color:#fff;
+    text-align:left;
+    outline:none;
+    font-size:12px;
+    font-family: 'Muli', sans-serif;
+    border-radius: 4px;
+}
+.content1 input[type="password"] {
+    margin-top: -4px;
+    height: 29px;
+    width:100%;
+    border:1px solid rgba(0, 0, 0, 0);
+    color:#fff;
+    text-align:left;
+    outline:none;
+    font-size:12px;
+    font-family: 'Muli', sans-serif;
+    border-radius: 4px;
+}
+.button-row {
+    width:100%;
+    margin-top:5%;
+    padding-left: 60%;
+    padding-bottom:40px;
+}
+.sign-in {
+    padding-top:10px;
+    padding-bottom:8px;
+    background-color:#4C9A39;
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+    color:#fff;
+    font-size:20px;
+    float:left;
+}
+.sign-in:hover {
+    background-color:#376D29;
+    color:#fff;
+}
+.footer {
+    padding:10px 0;
+    text-align:center;
+}
+.footer p {
+    color:#fff;
+    font-size:17px;
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    line-height:25px;
+}
+.footer a,a:active {
+    color:#fff;
+    text-decoration:none;
+    transition: all 0.5s ease-in-out;
+}
+.footer a:hover {
+    color:#c0392b;
+    transition: all 0.5s ease-in-out;
+}
+
+/*-- responsive-mediaquries --*/
+@media(max-width:1920px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 500px 10px;
+    }
+    .content1 input[type="password"] {
+        background:url(/assets/img/login/lock.png) no-repeat 500px 10px;
+    }
+    .sign-in {
+        margin-left:78px;
+    }
+    form[name='frmLogin'] {
+        min-height: 631px;
+    }
+}
+
+@media(max-width:1680px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 438px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 438px 10px;
+    }
+    .sign-in {
+        margin-left: 65px;
+    }
+    form[name='frmLogin'] {
+        min-height: 631px;
+    }
+}
+
+@media(max-width:1600px){
+    .content1 input[type="text"] { 
+        background: url(/assets/img/login/person.png) no-repeat 418px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 418px 10px;
+    }
+    .sign-in {
+        margin-left: 61px;
+    }
+    form[name='frmLogin'] {
+        min-height: 631px;
+    }
+}
+
+@media (max-width: 1440px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 380px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 380px 10px;
+    }
+    .sign-in {
+        margin-left: 52px;
+    }
+    form[name='frmLogin'] {
+        min-height: 631px;
+    }
+}
+
+@media (max-width: 1366px){
+    .sign-in {
+        margin-left: 19%;
+        font-size: 16px;
+    }
+    form[name='frmLogin'] {
+        min-height: 631px;
+    }
+}
+
+@media (max-width: 1280px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 338px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 338px 10px;
+    }
+    .sign-in {
+        margin-left: 7%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1080px){    
+    .sign-in {
+        margin-left: -2%;
+        font-size: 15px;
+    }
+    h1 {
+        font-size:32px;	
+    }
+    .log .content1 h2 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1050px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 280px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 280px 10px;
+    }
+}
+
+@media (max-width: 1024px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 370px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 370px 10px;
+    }
+    .sign-in {
+        margin-left: -9%;
+    }
+    .button-row {
+        padding-left:60%;	
+    }
+    .log .content1 h2 {
+        font-size: 30px;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 991px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 260px 10px;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 260px 10px;
+    }	
+}
+
+@media (max-width: 900px){	
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 240px 10px;
+    }
+    .content1 {
+        width: 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 240px 10px;
+    }
+    .button-row {
+        padding-left:60%;	
+    }
+    .sign-in {
+        margin-left: -9%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 840px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 245px 10px;
+        font-size: 16px;
+        background-size: 7% 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 245px 10px;
+        font-size: 16px;
+        background-size: 7% 50%;
+    }
+    h1 {
+        color:#b53310;
+        font-size: 24px;
+    }
+    .log .content1 h2 {
+        font-size: 27px;
+    }
+    .sign-in {
+        margin-left: 19%;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 667px){
+    .content1 {
+        width: 70%;
+    }
+    .sign-in {
+        margin-left: 15%;
+    }
+    form[name='frmLogin'] {
+        height: 631px;
+    }
+}
+
+@media (max-width: 640px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 322px 10px;
+        background-size: 7% 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 322px 10px;
+        background-size: 7% 50%;
+    }
+    .content1 {
+        width: 70%;
+    }
+    .sign-in {
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 600px){
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 304px 10px;
+        background-size: 7% 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 304px 10px;
+        background-size: 7% 50%;
+    }
+    .sign-in {
+        margin-left: 15%;
+    }
+    h1 {
+        color:#b53310;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 568px){
+    h1 {
+        color:#b53310;
+        padding: 25px 0;
+    }
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 287px 10px;
+        background-size: 7% 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 287px 10px;
+        background-size: 7% 50%;
+    }
+    .sign-in {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 480px){
+    .content1  {
+        width: 88%;
+    }
+    .content1 input[type="text"] {
+        background: url(/assets/img/login/person.png) no-repeat 280px 10px;
+        background-size: 7% 50%;
+    }
+    .content1 input[type="password"] {
+        background: url(/assets/img/login/lock.png) no-repeat 280px 10px;
+        background-size: 7% 50%;
+    }
+    .sign-in {
+        margin-left: 19%;
+        width: 72px;
+        font-size: 9px;
+    }
+    .reset {
+        margin-right: 32px;
+    }
+    .log {
+        margin: 0 auto;
+    }
+    .footer {
+        padding: 50px 20px;
+    }
+    h1 {
+        color:#b53310;
+        font-size: 16px;
+        padding-top: 13px;
+    }
+    h2 {
+        color:#b53310;
+        font-size: 14px;
+        padding-top: 13px;
+    }
+    .log .content1 h2{
+        font-size: 20px;
+        padding-top: 10%;
+    }
+}
+// background-image: url(/img/signin.jpeg);
+//     background-size: cover;
+//     background-position: center center;

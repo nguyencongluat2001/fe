@@ -1,0 +1,47 @@
+<div id="app-loading"></div>
+<form name="frmLogin" [formGroup]="loginForm">
+    <div style="background: #00000059;height: 100%;">
+        <h2 style="color:  #FFFF00;padding-bottom: 5px;">PHÒNG KHÁM Y KHOA HÀ NỘI 4.0</h2>
+        <h1 style="color:  #FFFFFF">KHOA CHẨN ĐOÁN HÌNH ẢNH</h1>
+        <div id="loginShowHide">
+            <div class="clear" style="height: 70px"></div>
+            <div class="log" >
+                <div class="content1" >
+                    <h2>CỔNG TRẢ KẾT QUẢ
+                        CHẨN ĐOÁN HÌNH ẢNH</h2>
+                    <div style="margin: 20px">
+                        <div style="border:1px solid #fff; width: 90%;margin: auto;border-radius: 4px;height: 30px;">
+                            <div style="width: 10%;float: left;height: 27px;background: rgba(0, 0, 0, 0.21);padding-top: 3px">
+                                <img src="assets/img/login/person.png" /></div>
+                            <div style="width: 90%;float: right;height: 27px;padding-top: 3px"> <input type="text" class="form-control" formControlName="username" matInput
+                                placeholder="Mã bệnh nhân">
+                            </div>
+                        </div>
+                        <div class="clear" style="margin-top: 20px"></div>
+                        <div style="border:1px solid #fff; width: 90%;margin: auto;border-radius: 4px;height: 30px;">
+                            <div style="width: 10%;float: left;height: 27px;background: rgba(0, 0, 0, 0.21);padding-top: 3px">
+                                <img src="assets/img/login/lock.png" /></div>
+                            <div style="width: 90%;float: right;height: 27px;padding-top: 3px"> <input [attr.type]="typePass" class="form-control" formControlName="password" matInput
+                                placeholder="Mật khẩu">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <!-- <div style="width: 95%;height: 30px; padding-left: 5%">
+                            <div style="width: 45%;float: left;margin-top: 10px;margin-bottom: 10px;text-align: left">
+                                <input type="checkbox" optional="true" name="ghinhomatkhau" id="ghinhomatkhau" onKeyDown="change_focus_on_firefox(document.forms['frmLogin'], this, event)" /> <label for='ghinhomatkhau' style="cursor: pointer;font-size: 12px">
+                                    Nhớ mật khẩu</label>
+                            </div>
+                            <div style="width: 45%;float: right;margin-top: 14px;margin-bottom: 10px;text-align: right">
+                            </div>
+                        </div> -->
+    
+                        <div class="button-row">
+                            <input type="button" name="btn_save" id="btn_save" (click)='login()' class="sign-in" value="ĐĂNG NHẬP">
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

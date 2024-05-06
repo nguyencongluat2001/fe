@@ -1,0 +1,52 @@
+.label-header {
+    font: inherit;
+    font-size: 16px;
+    color:#333;
+    padding: 10px 20px;
+    top: 8px;
+    position: relative;
+}
+#name{
+    text-transform: uppercase;
+    margin: 10px 0 10px;
+    font-weight: bold;
+}
+
+#open{
+    padding: 0px;
+}
+
+::ng-deep .dx-datagrid .dx-column-lines > td{
+    border-top: 1px solid #ddd;
+}
+
+::ng-deep .dx-datagrid-rowsview{
+    border: none;
+}
+::ng-deep .dx-datagrid-borders > .dx-datagrid-headers{
+    border-top:none;
+}
+::ng-deep .app-footer{
+    border: none;
+}
+
+#table{
+    border:none;
+}
+::ng-deep #tieuchi .dx-list-item-content{
+    white-space: pre-wrap;
+}
+.percent{
+    padding-right:0px;
+    margin-left: 30px;
+}
+label {
+    color:#333;
+}
+::ng-deep .dx-dropdownlist-popup-wrapper .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item-content {
+    padding: 7px 9px;
+    white-space: normal;
+}
+#form{
+    color: #000;
+}

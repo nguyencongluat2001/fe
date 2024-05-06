@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h2 class="modal-title" style="font-weight: bold">GIA HẠN ĐÁNH GIÁ</h2>
+    <button type="button" class="close" aria-label="Close" (click)="goBack()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="modal-body">
+
+    <div class="panel panel-default" style="height:auto">
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td id="lable"> <span>Hạn nộp kết quả: </span></td>
+                    <td class="deadline">
+                        <dx-date-box [(value)]="deadline" [min]="mindate"  type="date" displayFormat="dd/MM/yyyy"
+                            invalidDateMessage="Ngày ban hành phải có định dạng là kiểu ngày tháng">
+                        </dx-date-box>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <dx-button text="Ghi" type="success" [useSubmitBehavior]="true" (click)='onupload()'>
+    </dx-button>
+    <dx-button text="Quay lại" (click)="goBack()">
+    </dx-button>
+</div>

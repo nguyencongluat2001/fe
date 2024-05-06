@@ -1,0 +1,74 @@
+<div>
+    <div class="form-group" *ngFor="let des of descriptions">
+        <label class="dx-field-item-label">
+            <span class="dx-field-item-label-content">
+                <span class="dx-field-item-label-text">{{des.label}}</span>
+                <span *ngIf="des.required" class="dx-field-item-required-mark">&nbsp;*</span>
+            </span>
+        </label>
+        <!-- Text Box -->
+        <input  
+            *ngIf="des.type == 'text'" 
+            [attr.required]="des.required" 
+            type="text" 
+            class="form-control" 
+            id="{{des.key}}" 
+            name="{{des.key}}" 
+            value="{{datas[des.key]}}">
+        <!-- Text Box -->
+        <select 
+            *ngIf="des.type == 'select'" 
+            class="form-control" 
+            id="{{des.key}}" 
+            name="{{des.key}}"
+            [attr.required]="des.required ? des.required : undefined">
+            <option value="">-- Chọn {{des.label}} --</option>
+            <option
+                *ngFor="let list of lists[des.listtype]" 
+                value="{{list.code}}"
+                [attr.selected]="datas[des.key] == list.code? datas[des.key] == list.code: undefined"
+                >
+            {{list.name}}</option>
+        </select>
+        <!-- TextArea -->  
+        <textarea 
+            *ngIf="des.type == 'textarea'" 
+            class="form-control" 
+            id="{{des.key}}" 
+            name="{{des.key}}" 
+            rows="{{des.rows}}" 
+            value="{{datas[des.key]}}"
+            [attr.required]="des.required ? des.required : undefined">
+        </textarea>
+        <!-- Checkbox Group -->  
+        <div *ngIf="des.type == 'checkbox-group'">
+            <label class="checkbox-inline" *ngFor="let list of lists[des.listtype]">
+                <input 
+                name="{{des.key}}"
+                [attr.checked]="datas[des.key] == list.code? datas[des.key] == list.code: undefined" 
+                type="checkbox" 
+                value="{{list.code}}"
+                >
+                <span class="checkbox-span">{{list.name}}</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="dx-field-item-label">
+            <span class="dx-field-item-label-content">
+                <span class="dx-field-item-label-text">Trạng thái</span>
+            </span>
+        </label>
+        <div>
+            <label class="checkbox-inline">
+                <input 
+                name="status"
+                id="status"
+                type="checkbox"
+                [attr.checked]="datas.status? datas.status: undefined"  
+                value="1"
+                >
+                <span class="checkbox-span">Hoạt động</span></label>
+        </div>
+    </div>
+</div>

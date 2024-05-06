@@ -1,0 +1,50 @@
+<div class="panel panel-default panel-wrapper">
+  <div class="row" style="padding-bottom:10px;">
+    <div class="col-md-4">
+      <div class="dx-field">
+        <div class="dx-field-label">Từ ngày</div>
+        <div class="dx-field-value">
+          <dx-date-box type="date" displayFormat="dd/MM/yyyy" (onValueChanged)="getFromdate($event)">
+          </dx-date-box>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="dx-field">
+        <div class="dx-field-label">Đến ngày</div>
+        <div class="dx-field-value">
+          <dx-date-box type="date" displayFormat="dd/MM/yyyy" (onValueChanged)="getTodate($event)">
+          </dx-date-box>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <dx-button (onClick)="loadList()" type="default" text="Tìm kiếm">
+      </dx-button>
+    </div>
+  </div>
+  <div>
+    <b class="font-weight-bold text-dark">Tổng số lần đăng nhập là: <span class="text-primary">{{ totalLog }}</span></b>
+  </div>
+  <div id="table-container">
+    <div id="table" class="table-responsive pmd-card pmd-z-depth">
+      <dx-data-grid [dataSource]="Logs" [showColumnLines]="true" [showRowLines]="true" [wordWrapEnabled]="true"
+        [showBorders]="true">
+        <dxo-paging [pageSize]="15"></dxo-paging>
+        <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[15, 30, 50]" [showInfo]="true"></dxo-pager>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-header-filter [visible]="true"></dxo-header-filter>
+        <!-- Các cột của bảng -->
+        <dxi-column width="10%" dataField="unit_code" alignment="center" caption="Mã đơn vị"></dxi-column>
+        <dxi-column width="20%" dataField="unit_name" alignment="left" caption="Tên đơn vị"></dxi-column>
+        <dxi-column width="20%" dataField="name" alignment="left" caption="Họ và tên"></dxi-column>
+        <dxi-column width="15%" dataField="username" alignment="center" caption="Tên đăng nhập"></dxi-column>
+        <dxi-column width="13%" dataField="total" alignment="center" caption="Số lần đăng nhập"></dxi-column>
+        <dxi-column width="17%" dataField="last_used_at" alignment="left" caption="Lần cuối cùng đăng nhập"></dxi-column>
+        <dxi-column width="5%" alignment="center" caption="#"></dxi-column>
+
+        <!-- <dxi-column [width]="200" dataField="tendonvi" alignment="left" caption="Đơn vị"></dxi-column> -->
+      </dx-data-grid>
+    </div>
+  </div>
+</div>

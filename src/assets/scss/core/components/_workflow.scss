@@ -1,0 +1,107 @@
+.bjs-powered-by, .bpp-properties-header {
+  display: none;
+}
+.bpp-properties-panel {
+  background-color: #F5F5F5;
+  position: relative;
+}
+
+.js-properties-panel {
+    background-color: #F5F5F5;
+}
+
+.bpp-properties-group {
+    padding: 15px;
+}
+
+ul.bpp-properties-tabs-links > li > a {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 7px;
+  border: 1px solid #ccc;
+  border-radius: 3px 3px 0 0;
+  border-bottom: transparent;
+  background-color: #F5F5F5;
+  color: #666;
+  text-decoration: none;
+}
+ul.bpp-properties-tabs-links > li > a:hover {
+  color: #4d4d4d;
+}
+ul.bpp-properties-tabs-links > li + li {
+  margin-left: 4px;
+}
+ul.bpp-properties-tabs-links > li.bpp-active a {
+  padding-bottom: 5px;
+  border-top: 2px solid #52B415;
+  border-bottom: none;
+}
+
+.bpp-listener-area + .bpp-listener-area {
+  margin-top: 20px;
+}
+.bpp-properties-tab-bar {
+  border-bottom: 1px solid #ccc;
+  padding: 0 15px;
+}
+.bpp-properties-tab-bar .scroll-tabs-button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 3px 4px 3px 4px;
+  color: #666;
+}
+.bpp-properties-tab-bar .scroll-tabs-button:hover {
+  font-weight: bold;
+}
+.bpp-properties-tab-bar .scroll-tabs-button.scroll-tabs-left {
+  float: left;
+  margin-left: -15px;
+}
+.bpp-properties-tab-bar .scroll-tabs-button.scroll-tabs-right {
+  float: right;
+  margin-right: -15px;
+}
+.bpp-properties-tab-bar:not(.scroll-tabs-overflow) .scroll-tabs-button {
+  display: none;
+}
+
+ul.bpp-properties-tabs-links {
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+ul.bpp-properties-tabs-links > li {
+  display: inline-block;
+  margin: 0;
+}
+ul.bpp-properties-tabs-links > li.bpp-hidden {
+  display: none;
+}
+
+.bpp-properties-tab,
+.bpp-properties-tab.bpp-hidden {
+  display: none;
+}
+.bpp-properties-tab.bpp-active {
+  display: block;
+}
+
+.bpp-properties-header > .search {
+  display: none;
+}
+
+.bpp-properties-panel:empty {
+  display: none;
+}
+
+.bpp-properties-panel label,
+.bpp-properties-panel input {
+  vertical-align: middle;
+}
+
+.bpp-properties-panel [type=text],
+.bpp-properties-panel [contenteditable],
+.bpp-properties-panel textarea,
+.bpp-properties-panel select {
+  width: 100%;
+}

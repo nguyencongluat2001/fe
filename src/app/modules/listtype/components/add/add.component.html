@@ -1,0 +1,35 @@
+<form action="your-action" (submit)="update($event)">
+  <div class="modal-header">
+    <h2 class="modal-title pull-left">Thêm mới đối tượng</h2>
+    <button type="button" class="close" aria-label="Close" (click)="goback()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <dx-form id="form" [colCount]="1" validationGroup="listtypeData" [formData]="listtype" [readOnly]="false" [showColonAfterLabel]="true"
+      [showValidationSummary]="true">
+      <dxi-item [label]="{text: 'Mã danh mục'}" dataField="code">
+        <dxi-validation-rule type="required" message="Mã danh mục không được để trống">
+        </dxi-validation-rule>
+      </dxi-item>
+      <dxi-item [label]="{text: 'Tên danh mục'}" dataField="name">
+        <dxi-validation-rule type="required" message="Tên danh mục không được để trống">
+        </dxi-validation-rule>
+      </dxi-item>
+      <dxi-item [label]="{text: 'Ghi chú'}" dataField="note" editorType="dxTextArea" [colSpan]="3"></dxi-item>
+      <dxi-item [label]="{text: 'Thứ tự hiển thị'}" dataField="order">
+      </dxi-item>
+      <dxi-item [label]="{text: 'Trạng thái'}" dataField="status" editorType="dxCheckBox" [editorOptions]="{ 
+                    text: 'Hoạt động'
+                }">
+      </dxi-item>
+    </dx-form>
+  </div>
+  <div class="modal-footer">
+    <dx-button text="Ghi" type="success" validationGroup="listtypeData" [useSubmitBehavior]="true">
+    </dx-button>
+    <dx-button text="Quay lại" (click)="goback()">
+    </dx-button>
+
+  </div>
+</form>

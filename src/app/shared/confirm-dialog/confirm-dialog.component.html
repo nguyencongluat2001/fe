@@ -1,0 +1,15 @@
+<div class="modal-dialog modal-hg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">{{title}}</h4>
+      <span class="close" (click)="onDismiss()">×</span>
+    </div>
+    <div class="modal-body modal-body-record">
+      <p>{{message}}</p>
+    </div>
+    <div class="modal-footer ">
+      <button class="btn btn-primary" color="primary" (click)="onConfirm()">Đồng ý</button>
+      <button class="btn btn-light" color="warn" (click)="onDismiss()">Hủy</button>
+    </div>
+  </div>
+</div>

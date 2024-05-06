@@ -1,0 +1,14 @@
+<dx-data-grid id="user"
+  [dataSource]="users"
+  [showRowLines]="true"
+  [wordWrapEnabled]="true" 
+  (onSelectionChanged)="selectionChangedUser($event)">
+  <dxo-selection mode="multiple"></dxo-selection>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxi-column dataField="name" caption="Tên người dùng"></dxi-column>
+  <dxi-column dataField="username" caption="Tên đăng nhập"></dxi-column>
+  <dxi-column dataField="role" [calculateCellValue]="setRole" caption="Vai trò"></dxi-column>
+  <dxi-column dataField="status" [calculateCellValue]="setStatus" alignment="center" caption="Trạng thái"></dxi-column>
+  <!-- <dxo-editing mode="popup" [allowDeleting]="true"></dxo-editing> -->
+</dx-data-grid>

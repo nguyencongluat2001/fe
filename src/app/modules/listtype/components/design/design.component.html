@@ -1,0 +1,40 @@
+<form id="form" accept-charset="utf-8">
+    <div class="modal-header">
+        <h2 class="modal-title">Thiết kế mẫu temp đối tượng danh mục</h2>
+    <button type="button" class="close" aria-label="Close" (click)="goback()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    </div>
+    <div class="modal-body">
+    <div class="build-wrap" style="padding: 10px;"></div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Họ tên điều tra viên:</label> <span style="color: red">*</span>
+            </div>
+            <div class="col-md-6">
+                <!-- <input type="text" name="id" [(value)]="id" class="form-control" > -->
+                <!-- [(value)]="name_investigator" -->
+                <dx-text-area [height]="290" name="data" [(value)]="data">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Họ tên điều tra viên không được để trống">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-area>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+    <dx-button
+        (click)="update()"
+        text="Cập nhật"
+        type="default"
+        validationGroup="listtypeData">
+    </dx-button>
+    <dx-button
+        (click)="goback()"
+        text="Quay lại">
+    </dx-button>
+    </div>
+</form>

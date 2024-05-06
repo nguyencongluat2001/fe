@@ -1,0 +1,39 @@
+<div *ngIf="data.enquire== 'MULTICHOICESCALE'">
+    <a class="dx-link dx-link-add" (click)="showexplandetail()">
+        <!-- <img class="fa fa-file-text-o" style="float: right;" /> -->
+        <i class="fa fa-file-text-o fa-hg" style="float: right;"></i>
+    </a>
+</div>
+<div *ngIf='showexplan' style="text-align: left">
+    <div *ngFor="let item of data.explanation_file" style="text-align: left">
+        <p style="text-align: justify">{{item.explanation}}</p>
+        <!-- <p style="text-align: justify;color:red">{{item.explanation}}</p> -->
+    </div>
+    <div *ngFor="let file of data.listfile" style="text-align: left">
+        <div *ngFor="let file_chil of file" style="text-align: left">
+            <img src='assets/img/icons/attach_file.gif' />
+                <a style="color:dodgerblue;cursor:pointer;word-break: break-word;" (click)="openfile(file_chil.filenameFull)">{{file_chil.fileName}}</a>
+        </div>
+    </div>
+</div>
+    <!-- <div *ngIf='show'>
+
+        <div *ngFor="let file of arrfile" style="text-align: left">
+            <div *ngIf="file.is_return!='1'">
+                <img src='assets/img/icons/attach_file.gif' />
+                <a style="color:dodgerblue;cursor:pointer;word-break: break-word;" (click)="openfile(file.filenameFull)">{{file.fileName}}</a>
+            </div>
+            <div *ngIf="file.is_return=='1'">
+                <i style="color:red;" class="fa fa-paperclip"></i>
+                <a style="color:red;cursor:pointer;word-break: break-word;" (click)="openfile(file.filenameFull)">{{file.fileName}}</a>
+            </div>
+
+        </div>
+    </div> -->
+    <!-- <div *ngIf='status!="XEM_CHI_TIET"'>
+    <a class="dx-link dx-link-add" (click)="showModal()">
+      <img src='assets/img/icons/add-file.png' style="float: right;" />
+    </a>
+  </div> -->
+
+    

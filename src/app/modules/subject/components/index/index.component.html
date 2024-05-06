@@ -1,0 +1,55 @@
+<mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="handlePropertyChange($event)">
+  <mat-tab label="{{ tab.name }}" *ngFor="let tab of dataTab"></mat-tab>
+</mat-tab-group>
+
+<div class="body-content">
+	<div class="container">
+    <div class="row">
+      <div class="col-md-3 display-flex" align="right"><label for="">Đợt đánh giá</label></div>
+      <div class="col-md-6">
+        <dx-select-box [value]="evaluation_id" [dataSource]="evaluation"
+          (onSelectionChanged)=" evaluationchange($event)" displayExpr="name" wordWrapEnabled="true"
+          placeholder="Chọn đợt đánh giá" valueExpr="id">
+        </dx-select-box>
+      </div>
+      <div class="col-md-3">
+        <dx-button (onClick)="loadList()" icon="fa fa-search" text="Tìm kiếm"></dx-button>
+      </div>
+      <div *ngIf="selectItemTabs == 'LANH_DAO_CAP_XA' || selectItemTabs == 'LANH_DAO_CAP_HUYEN'" class="col-md-3 mt-2 display-flex" align="right"><label for="">Đơn vị</label></div>
+      <div *ngIf="selectItemTabs == 'LANH_DAO_CAP_XA' || selectItemTabs == 'LANH_DAO_CAP_HUYEN'" class="col-md-6 mt-2">
+        <dx-select-box [value]="unit_id" [dataSource]="arrUnit"
+          (onSelectionChanged)="changeUnit($event)" displayExpr="name" wordWrapEnabled="true"
+          placeholder="Chọn đơn vị" valueExpr="id" [showClearButton]="true">
+        </dx-select-box>
+      </div>
+    </div>
+  </div><br>
+  <div class="pull-right button-panel">
+		<button mat-button mat-raised-button (click)="export()"><i class="dx-icon fa fa-file-excel-o"></i> Xuất danh sách</button>
+		<button mat-button mat-raised-button (click)="copy()"><mat-icon>content_copy</mat-icon>Copy</button>
+		<button mat-button mat-raised-button (click)="add()"><mat-icon>add</mat-icon>Thêm</button>
+		<button mat-button mat-raised-button (click)="edit()" [disabled]="!selectedItems.length"><mat-icon>edit</mat-icon>Sửa</button>
+		<button mat-button mat-raised-button (click)="delete()" [disabled]="!selectedItems.length"><mat-icon>delete</mat-icon>Xóa</button>
+  </div>
+  <div id="table-container">
+    <div id="table" class="table-responsive pmd-card pmd-z-depth">
+      <dx-data-grid  [dataSource]="ListSubject"  [wordWrapEnabled]="true" [showColumnLines]="true"
+      [showRowLines]="true"
+      [showBorders]="true"  (onSelectionChanged)="selectionChangedSubject($event)"      >
+        <dxo-paging [pageSize]="15"></dxo-paging>
+        <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[15, 30, 50]" [showInfo]="true" [visible]="pageEnabled"></dxo-pager>
+        <dxo-selection mode="multiple"></dxo-selection>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-header-filter [visible]="true"></dxo-header-filter>
+        <dxi-column [width]="200" dataField="name" caption="Họ tên"></dxi-column>
+        <dxi-column dataField="email" caption="Email"></dxi-column>
+        <dxi-column dataField="age" alignment="center" caption="Tuổi"></dxi-column>
+        <dxi-column dataField="unit_name" caption="Cơ quan công tác" *ngIf="selectItemTabs != 'LANH_DAO_CAP_HUYEN' && selectItemTabs != 'LANH_DAO_CAP_XA'"></dxi-column>
+        <dxi-column dataField="unitLevel" caption="Đơn vị công tác" *ngIf="selectItemTabs == 'LANH_DAO_CAP_HUYEN' || selectItemTabs == 'LANH_DAO_CAP_XA'"></dxi-column>
+        <dxi-column dataField="position" caption="Chức vụ"></dxi-column>
+        <dxi-column dataField="trinhdo" caption="Trình độ"></dxi-column>
+        <dxi-column dataField="trangthaiphieu" caption="Trạng thái phiếu"></dxi-column>
+      </dx-data-grid>
+    </div>
+  </div>
+</div>

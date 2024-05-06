@@ -1,0 +1,43 @@
+<div class="row">
+  <div style="width: 1.3%"></div>
+  <div style="width: 60%;display: flex;">
+      <dx-select-box [dataSource]="arrGD" value="code" valueExpr="code" displayExpr="name" [width]="500"  (onSelectionChanged)="filterSelectedGD($event)"
+          placeholder="Chọn giai đoạn">
+      </dx-select-box>
+      <dx-button (onClick)="loadList()" id="search" icon="fa fa fa-search"
+      text="Tìm kiếm" ></dx-button>
+  </div>
+</div>
+<div class="panel panel-default panel-wrapper body-content">
+    <div class="pull-right button-panel">
+      <dx-button (onClick)="add()" id="add" icon="fa fa-plus" text="Thêm"></dx-button>
+
+      <dx-button (onClick)="edit()" [disabled]="!selectedItems" id="edit" icon="fa fa-pencil-square-o"
+      text="Sửa" ></dx-button>
+      <dx-button (onClick)="delete()" [disabled]="!selectedItems" id="delete" icon="fa fa-trash"
+        text="Xóa"></dx-button>
+    </div>
+
+    <div id="table-container">
+        <div  id="table" class="table-responsive pmd-card pmd-z-depth">
+          <dx-data-grid #grid
+            [dataSource]="Records"
+            [wordWrapEnabled]="true" 
+            (onSelectionChanged)="selectEvaluation($event)"
+      [showRowLines]="true"
+     >
+            <dxo-paging [pageSize]="15"></dxo-paging>
+            <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[15, 30, 50]" [showInfo]="true" [visible]="pageEnabled"></dxo-pager>
+              <dxo-selection mode="multiple"></dxo-selection>
+              <dxo-filter-row [visible]="true"></dxo-filter-row>
+              <dxo-header-filter [visible]="true"></dxo-header-filter>
+              <!-- Các cột của bảng -->
+              <!-- <dxi-column [width]="100" dataField="name" caption="STT"></dxi-column> -->
+              <dxi-column [width]="300" dataField="code" caption="Mã hồ sơ"></dxi-column>
+              <dxi-column  dataField="type" alignment="left" caption="Loại hồ sơ"></dxi-column>
+              <dxi-column [width]="200" dataField="year" alignment="left" caption="Năm đề nghị"></dxi-column>
+              <dxi-column [width]="120" dataField="status" [calculateCellValue]="setStatus" alignment="left" caption="Trạng thái"></dxi-column>
+            </dx-data-grid> 
+        </div>
+      </div>
+</div>

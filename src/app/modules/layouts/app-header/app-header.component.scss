@@ -1,0 +1,20 @@
+.nav-text {
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    margin-right: 20px;
+    margin-top: 2px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+}
+.active, .nav-text:hover{
+    background-color: #429cf7;
+    padding: 10px 10px 10px 10px;
+}
+
+.dropdown-item{
+    cursor: pointer;
+}
+::ng-deep .app-header.navbar .dropdown-item {
+    min-width: 200px;
+}

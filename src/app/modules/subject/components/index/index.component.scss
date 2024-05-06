@@ -1,0 +1,33 @@
+label{
+    color: #000;
+}
+.display-flex{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+::ng-deep .subject-modal.modal-lg{
+    max-width: 1000px;
+}
+::ng-deep .dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+    text-align: center !important;
+}
+// NEW
+.mat-mdc-tab {
+    flex-grow: 0 !important;
+}
+
+.body-content {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.table-container {
+    margin-top: 20px;
+}
+
+.body-content button {
+    margin-left: 0.25rem !important;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+}

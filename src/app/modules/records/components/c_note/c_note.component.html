@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h2 class="modal-title" style="font-weight: bold">KẾT QUẢ TỰ ĐÁNH GIÁ</h2>
+    <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="modal-body">
+
+    <div class="panel panel-default" style="height:auto">
+        <div class="panel-body">
+            <div class="row col-md-12">
+                <dx-text-area  placeholder="Kết quả tự đánh giá" [(value)]="self_assessment_results"></dx-text-area>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <dx-button text="Ghi" type="default" validationGroup="evaluationValidate" [useSubmitBehavior]="true"
+        (click)='onupload()'>
+    </dx-button>
+    <dx-button text="Quay lại" (click)="bsModalRef.hide()">
+    </dx-button>
+</div>

@@ -1,0 +1,50 @@
+<form>
+  <div class="modal-body">
+    <dx-form id="form" [colCount]="1" validationGroup="permissiongroupData" [formData]="permissionmodel.objPermissionGroup" [readOnly]="false" [showColonAfterLabel]="true"
+      [showValidationSummary]="true">
+      <dxi-item [editorOptions]="{width: '50%' }" [label]="{text: 'Mã nhóm quyền'}" dataField="code">
+        <dxi-validation-rule type="required" message="Mã nhóm quyền không được để trống">
+        </dxi-validation-rule>
+      </dxi-item>
+      <dxi-item [editorOptions]="{width: '50%' }" [label]="{text: 'Tên nhóm quyền'}" dataField="name">
+        <dxi-validation-rule type="required" message="Tên nhóm quyền không được để trống">
+        </dxi-validation-rule>
+      </dxi-item>
+      <dxi-item [label]="{text: 'Trạng thái'}" dataField="status" editorType="dxCheckBox" [editorOptions]="{ 
+                      text: 'Hoạt động'
+                  }">
+      </dxi-item>
+
+    </dx-form>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          <label style="font-weight: bold">
+            <strong> Danh sách người dùng</strong>
+          </label>
+        </div>
+        <dx-tree-view id="selection-treeview" [items]="users" [width]="320" showCheckBoxesMode="normal" (onItemSelectionChanged)="selectionUserChanged($event)">
+        </dx-tree-view>
+      </div>
+      <div class="col-md-6">
+        <div id="table-container">
+          <div>
+            <label style="font-weight: bold">
+              <strong>Danh sách Modules Quản trị</strong>
+            </label>
+          </div>
+          <dx-tree-view id="selection-treeview2" [items]="modules" [width]="320" showCheckBoxesMode="normal" (onItemSelectionChanged)="selectionModuleControllerChanged($event)">
+          </dx-tree-view>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <dx-button text="Ghi" (click)="update()" type="default" validationGroup="permissiongroupData" [useSubmitBehavior]="true">
+    </dx-button>
+    <dx-button text="Quay lại" (click)="quaylai()">
+    </dx-button>
+  </div>
+</form>

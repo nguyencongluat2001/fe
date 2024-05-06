@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  #Angular Service
+  angular:
+    image: node:21-alpine
+    container_name: devextreme_angular
+    restart: unless-stopped
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    tty: true

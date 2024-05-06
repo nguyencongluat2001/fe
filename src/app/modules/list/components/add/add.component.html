@@ -1,0 +1,43 @@
+<form id="form-list-update" action="" (submit)="onFormSubmit($event)">
+    <div class="modal-header">
+        <h2 class="modal-title">Đối tượng danh mục</h2>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="showGroup == 1">
+            <div>
+                <label>Cấp đơn vị:</label> <span style="color: red">*</span>
+            </div>
+            <dx-select-box #donvi [(value)]="data_group" [dataSource]="group" displayExpr="name" placeholder="Chọn cấp đơn vị" [showClearButton]="true" valueExpr="code" >
+                <dx-validator>
+                    <dxi-validation-rule type="required" message="Cấp đơn vị không được để trống">
+                    </dxi-validation-rule>
+                </dx-validator>
+            </dx-select-box>
+            <br>
+        </div>
+        <app-render  [data]="data" [description]="description"></app-render>
+        <!-- <div _ngcontent-c13="" class="form-group">
+            <label _ngcontent-c13="" class="dx-field-item-label">
+                <span _ngcontent-c13="" class="dx-field-item-label-content">
+                    <span _ngcontent-c13="" class="dx-field-item-label-text">Mã đối tượng</span>
+                    <span _ngcontent-c13="" class="dx-field-item-required-mark">&nbsp;*</span>
+                </span>
+            </label>
+            <input _ngcontent-c13="" class="form-control" type="text" required="true" id="code" name="code">
+        </div> -->
+    </div>
+    <div class="modal-footer">
+        <dx-button
+            text="Ghi"
+            type="default"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <dx-button
+            text="Quay lại"
+            (click)="bsModalRef.hide()">
+        </dx-button>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+<form id="form" (submit)="onSubmit($event)">
+  <div class="modal-header">
+    <h2 class="modal-title">Xác nhận xóa</h2>
+    <button type="button" class="close" aria-label="Close" (click)="goback()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="!confirm" class="row col-md-12">
+      <div class="col-md-3">Email</div>
+      <div class="col-md-9">
+        <dx-text-box [(value)]="email" placeholder="Nhập email">
+          <dx-validator>
+            <dxi-validation-rule type="required" message="Email không được để trống">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="email" message="Không đúng định dạng email">
+            </dxi-validation-rule>
+          </dx-validator>
+        </dx-text-box>
+      </div>
+    </div>
+    <div *ngIf="confirm" class="row col-md-12">
+      <div class="col-md-3">Mã xác nhận</div>
+      <div class="col-md-9">
+        <dx-text-box [(value)]="code" placeholder="Nhập mã xác nhận">
+          <dx-validator>
+            <dxi-validation-rule type="required" message="Mã xác nhận không được để trống">
+            </dxi-validation-rule>
+          </dx-validator>
+        </dx-text-box>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <dx-button *ngIf="!confirm" text="Lấy mã" type="default" (click)="verification()">
+    </dx-button>
+    <dx-button *ngIf="confirm" text="Xác nhận" type="default" validationGroup="evaluationValidate" [useSubmitBehavior]="true">
+    </dx-button>
+    <dx-button text="Đóng" (click)="goback()">
+    </dx-button>
+  </div>
+</form>

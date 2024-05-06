@@ -1,0 +1,76 @@
+<form (submit)="onSubmit()" id="form">
+	<div class="modal-header">
+		<h2 class="modal-title">Đối tượng người dùng</h2>
+		<button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+		<dx-form validationGroup="userData" [colCount]="1" [formData]="user" [readOnly]="false"
+			[showColonAfterLabel]="true" [showValidationSummary]="true">
+			<dxi-item itemType="group" [colCount]="2">
+				<dxi-item itemType="group">
+					<dxi-item [editorOptions]="{ disabled: true }" [label]="{text: 'Thuộc đơn vị'}"
+						dataField="nameParent"></dxi-item>
+					<dxi-item [label]="{text: 'Tên đăng nhập'}" dataField="username" [editorOptions]="{ tabIndex: 1 }">
+						<dxi-validation-rule type="required" message="Tên đăng nhập không được để trống">
+						</dxi-validation-rule>
+					</dxi-item>
+					<dxi-item [label]="{text: 'Mật khẩu'}" dataField="password"
+						[editorOptions]="{ mode: 'password',tabIndex: 3 }">
+						<dxi-validation-rule *ngIf="check" type="required" message="Mật khẩu không được để trống">
+						</dxi-validation-rule>
+					</dxi-item>
+					<dxi-item [label]="{text: 'Số điện thoại'}" dataField="phone_number"
+						[editorOptions]="{ tabIndex: 5 }"></dxi-item>
+					<dxi-item dataField="department" editorType="dxSelectBox" [label]="{text: 'Phòng ban'}"
+						[editorOptions]="{ dataSource: phongbans,displayExpr: 'name',valueExpr: 'code',tabIndex: 7 }">
+					</dxi-item>
+				</dxi-item>
+				<dxi-item itemType="group">
+					<dxi-item [editorOptions]="{ disabled: true }" [label]="{text: 'Thuộc phòng ban'}"
+						dataField="departments"></dxi-item>
+					<dxi-item [label]="{text: 'Họ và tên'}" dataField="name" [editorOptions]="{ tabIndex: 2 }">
+						<dxi-validation-rule type="required" message="Họ và tên không được để trống">
+						</dxi-validation-rule>
+					</dxi-item>
+					<dxi-item [label]="{text: 'Xác nhận MK'}" editorType="dxTextBox" dataField="repassword"
+						[editorOptions]="{ mode: 'password',tabIndex: 4 }">
+						<dxi-validation-rule *ngIf="check" type="required"
+							message="Vui lòng nhập lại mật khẩu để xác nhận">
+						</dxi-validation-rule>
+						<dxi-validation-rule *ngIf="check" type="compare" [comparisonTarget]="passwordComparison"
+							message="Mật khẩu xác nhận không đúng">
+						</dxi-validation-rule>
+					</dxi-item>
+					<dxi-item [label]="{text: 'Email'}" dataField="email" [editorOptions]="{ tabIndex: 6 }"></dxi-item>
+					<dxi-item dataField="position" editorType="dxSelectBox" [label]="{text: 'Chức vụ'}"
+						[editorOptions]="{ dataSource: position,displayExpr: 'name',valueExpr: 'code',tabIndex: 8 }">
+						<dxi-validation-rule type="required" message="Chức vụ không được để trống">
+						</dxi-validation-rule>
+					</dxi-item>
+				</dxi-item>
+			</dxi-item>
+			<dxi-item itemType="group">
+				<dxi-item dataField="role" editorType="dxRadioGroup" [label]="{text: 'Vai trò'}"
+					[editorOptions]="{ dataSource: roles,displayExpr: 'name',valueExpr: 'id',layout:'horizontal',tabIndex: 9 }">
+				</dxi-item>
+			</dxi-item>
+			<dxi-item itemType="group">
+				<dxi-item [label]="{text: 'Thứ tự hiển thị'}" [editorOptions]="{ tabIndex: 10 }" dataField="order">
+				</dxi-item>
+				<dxi-item [label]="{text: 'Trạng thái'}" dataField="status" editorType="dxCheckBox" [editorOptions]="{ 
+					text: 'Hoạt động',tabIndex: 12
+				}">
+				</dxi-item>
+			</dxi-item>
+		</dx-form>
+	</div>
+
+	<div class="modal-footer">
+		<dx-button text="Ghi"  type="default" validationGroup="userData" [useSubmitBehavior]="true">
+		</dx-button>
+		<dx-button text="Quay lại"  (click)="bsModalRef.hide()">
+		</dx-button>
+	</div>
+</form>

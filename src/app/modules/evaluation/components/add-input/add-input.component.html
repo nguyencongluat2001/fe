@@ -1,0 +1,84 @@
+<form (submit)="onSubmit($event)" id="form">
+	<div class="modal-header">
+		<h2 class="modal-title">CẬP NHẬT THANG ĐIỂM ĐÁNH GIÁ</h2>
+		<button type="button" class="close" aria-label="Close" (click)="goback()">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+		<div class="row col-md-12">
+			<div class="col-md-12">
+				<!-- <dx-form validationGroup="evaluationValidate" [colCount]="2"  [formData]="MultipleChoice" [readOnly]="false" [showColonAfterLabel]="true"
+				 [showValidationSummary]="true">
+					<dxi-item [colSpan]="2" [label]="{text: 'Thang điểm đánh giá'}" dataField="name">
+						<dxi-validation-rule type="required" message="Thang điểm đánh giá không được để trống">
+						</dxi-validation-rule>
+					</dxi-item>
+					<dxi-item [colSpan]="2" [label]="{text: 'Số hạng'}" dataField="code_term" editorType="dxSelectBox" [editorOptions]="{ dataSource: listSohang, valueExpr: 'code', displayExpr: 'name', value:MultipleChoice.code_term}">
+							<dxi-validation-rule type="required" message="Khối đơn vị không được để trống">
+							</dxi-validation-rule>
+					</dxi-item>
+				
+					<dxi-item [label]="{text: 'Số thứ tự'}" dataField="c_order" [editorOptions]="{ value:stt}" >
+						<dxi-validation-rule type="required" message="Số thứ tự không được để trống">
+						</dxi-validation-rule>
+						<dxi-validation-rule type="pattern" [pattern]="numberPattern" message="Số thứ tự bắt buộc phải nhập kiểu số!">
+						</dxi-validation-rule>
+					</dxi-item>
+
+				</dx-form> -->
+				<div class="row">
+					<div class="col-md-3">
+						<label>Tên số hạng:</label> <span style="color: red">*</span>
+					</div>
+					<div class="col-md-9">
+						<dx-text-box [(value)]="name" displayExpr="name" placeholder="Chọn tên bộ tiêu chí" [showClearButton]="true" valueExpr="code" >
+							<dx-validator>
+								<dxi-validation-rule type="required" message="Tên bộ tiêu chí không được để trống">
+								</dxi-validation-rule>
+							</dx-validator>
+						</dx-text-box>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-3">
+						<label>Số hạng:</label> <span style="color: red">*</span>
+					</div>
+					<div class="col-md-9">
+						<dx-select-box #donvi [(value)]="code_term" [dataSource]="listSohang" displayExpr="name" placeholder="Chọn số hạng" [showClearButton]="true" valueExpr="code" >
+							<dx-validator>
+								<dxi-validation-rule type="required" message="Số hạng không được để trống">
+								</dxi-validation-rule>
+							</dx-validator>
+						</dx-select-box>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-md-3">
+						<label>Thứ tự:</label> <span style="color: red">*</span>
+					</div>
+					<div class="col-md-9">
+						<dx-text-box [(value)]="order" displayExpr="order" [showClearButton]="true" valueExpr="code" >
+							<dx-validator>
+								<dxi-validation-rule type="required" message="Thứ tự không được để trống">
+								</dxi-validation-rule>
+							</dx-validator>
+						</dx-text-box>
+					</div>
+				</div>
+				<br>
+			</div>
+		</div>
+	</div>
+	<div class="dx-fieldset">
+        <dx-validation-summary id="summary"></dx-validation-summary>
+    </div>
+	<div class="modal-footer">
+		<dx-button text="Ghi" type="success" [useSubmitBehavior]="true">
+		</dx-button>
+		<dx-button text="Quay lại" (click)="goback()">
+		</dx-button>
+	</div>
+</form>

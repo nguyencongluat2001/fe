@@ -1,0 +1,85 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title">CẬP NHẬT THÔNG BÁO MỚI</h2>
+        <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="row">
+                <span class="col-md-2 text-left control-label required">Tiêu đề <span style="color: red;">*</span>:</span>
+                <div class="col-md-8">
+                    <input class="form-control" type="text" [(ngModel)]='title' required #titleVar="ngModel">
+                    <span *ngIf=" titleVar.touched && titleVar.errors?.['required']" style="color: red;">
+              Tiêu đề không được để trống
+          </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <span class="col-md-2 text-left control-label required">Nội dung <span style="color: red;">*</span>:</span>
+                <div class="col-md-8">
+                    <!-- <app-ngx-editor [placeholder]="'Enter text here...'"  [spellcheck]="true" height="150px" style="color: black;" [(ngModel)]="content" ngModel #contentVar="ngModel" required></app-ngx-editor> -->
+                    <ckeditor [config]="myCkeditorConfig" [(ngModel)]="content" ngModel #contentVar="ngModel" required>
+
+                    </ckeditor>
+                    <span *ngIf=" contentVar.touched && contentVar.errors?.['required']" style="color: red;">
+            Nội dung không được để trống
+        </span>
+                    <!-- <dx-text-area placeholder="Nội dung thông báo" [height]="150" [(value)]='content' ngModel #contentVar="ngModel" required></dx-text-area>  -->
+
+                    <!-- [(value)]="explanation" [(ngModel)]='content' -->
+
+                </div>
+            </div>
+        </div>
+        <div class="form-goup">
+            <div class="row">
+                <div class="col-md-12">
+                    <label style="font-weight: bold">
+            <strong> Danh sách gửi thông báo </strong>
+          </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <dx-tree-view id="selection-treeview" [items]="users" [width]="320" showCheckBoxesMode="normal" (onItemSelectionChanged)="selectionUserChanged($event)">
+                    </dx-tree-view>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <div class="row">
+                <span class="col-md-2 text-left control-label required">Đính kèm file :</span>
+                <div class="col-md-2">
+                    <input type="file" id="file" (change)="handleFileInput($event)" style="width: 75px;color:transparent">
+                </div>
+                <div class="col-md-8">
+                    <div *ngFor="let file of fileselected">
+                        <img src='assets/img/icons/attach_file.gif' />
+                        <a target="_blank" style="word-break: break-word;">{{file.name}}</a>
+                        <img src='assets/img/icons/square_delete.png' (click)="remove(file.name)" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="row">
+            <input type="button" class="btn btn-success" (click)="uploadNotification()" value="Ghi" [disabled]="titleVar.invalid || contentVar.invalid " />
+        </div>
+        <!-- <dx-button text="Ghi" type="success" validationGroup="evaluationValidate" [useSubmitBehavior]="true" (click)='onupload()'>
+
+    </dx-button> -->
+        <dx-button text="Quay lại" (click)="bsModalRef.hide()">
+        </dx-button>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+.dx-field-label{
+    font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.btn-primary{
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+#txt_search:focus{
+    border-color:#337ab7;
+}
+::ng-deep #treeuser{
+    max-height: 400px;
+}
+////////////////////////////////
+/// 
+/* Remove default bullets */
+ul {
+    list-style: none;
+    margin: 0;
+    //margin-top: 3px;
+    //margin-bottom: 3px;
+}
+
+ul li {
+    clear: both;
+    padding-left: 18px;
+    position: relative;
+    margin: 0;
+    // margin-top: 5px;
+    // margin-bottom: 5px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.caret {
+    width: 10px;
+}
+
+.get-list-child-changed {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.show-list-child-changed {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+///////////////
+.nested-menu {
+    .nested {
+        list-style-type: none;
+    }
+
+    .submenu {
+        display: none;
+        height: 0;
+    }
+
+    & .expand {
+        :hover {
+            background-color: #eaecf4;
+        }
+
+        &.submenu {
+
+
+            display: block;
+            list-style-type: none;
+            height: auto;
+            margin: 0;
+
+            li {
+
+                a {
+                    padding: 10px;
+                    display: block;
+                }
+            }
+        }
+    }
+}

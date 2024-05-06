@@ -1,0 +1,63 @@
+<nav class="sidebar-nav" [style.margin-bottom]="'50px'">
+	<ul class="nav" *ngIf="project == 'eparindex'">
+		<ng-template ngFor let-navitem [ngForOf]="sidebar_parindex">
+			<li *ngIf="isDivider(navitem)" class="nav-divider"></li>
+			<ng-template [ngIf]="isTitle(navitem)">
+				<app-sidebar-title [title]='navitem'></app-sidebar-title>
+			</ng-template>
+			<ng-template [ngIf]="!isDivider(navitem)&&!isTitle(navitem)">
+				<app-sidebar-item [item]='navitem'></app-sidebar-item>
+			</ng-template>
+		</ng-template>
+	</ul>
+	<ul class="nav" *ngIf="project == 'ereport'">
+		<ng-template ngFor let-navitem [ngForOf]="sidebar_report">
+			<li *ngIf="isDivider(navitem)" class="nav-divider"></li>
+			<ng-template [ngIf]="isTitle(navitem)">
+				<app-sidebar-title [title]='navitem'></app-sidebar-title>
+			</ng-template>
+			<ng-template [ngIf]="!isDivider(navitem)&&!isTitle(navitem)">
+				<app-sidebar-item [item]='navitem'></app-sidebar-item>
+			</ng-template>
+		</ng-template>
+	</ul>
+	<ul class="nav" *ngIf="project == 'system'">
+		<ng-template ngFor let-navitem [ngForOf]="sidebar_system">
+			<li *ngIf="isDivider(navitem)" class="nav-divider"></li>
+			<ng-template [ngIf]="isTitle(navitem)">
+				<app-sidebar-title [title]='navitem'></app-sidebar-title>
+			</ng-template>
+			<ng-template [ngIf]="!isDivider(navitem)&&!isTitle(navitem)">
+				<app-sidebar-item [item]='navitem'></app-sidebar-item>
+			</ng-template>
+		</ng-template>
+	</ul>
+	<ul class="nav" *ngIf="project == 'sociological'">
+		<ng-template ngFor let-navitem [ngForOf]="sidebar_sociological">
+			<li *ngIf="isDivider(navitem)" class="nav-divider"></li>
+			<ng-template [ngIf]="isTitle(navitem)">
+				<app-sidebar-title [title]='navitem'></app-sidebar-title>
+			</ng-template>
+			<ng-template [ngIf]="!isDivider(navitem)&&!isTitle(navitem)">
+				<app-sidebar-item [item]='navitem'></app-sidebar-item>
+			</ng-template>
+		</ng-template>
+	</ul>
+	<ul class="nav" *ngIf="project == 'sipas'">
+		<ng-template ngFor let-navitem [ngForOf]="sidebar_sipas">
+			<li *ngIf="isDivider(navitem)" class="nav-divider"></li>
+			<ng-template [ngIf]="isTitle(navitem)">
+				<app-sidebar-title [title]='navitem'></app-sidebar-title>
+			</ng-template>
+			<ng-template [ngIf]="!isDivider(navitem)&&!isTitle(navitem)">
+				<app-sidebar-item [item]='navitem'></app-sidebar-item>
+			</ng-template>
+		</ng-template>
+	</ul>
+</nav>
+
+<!-- <span class="left"
+[ngStyle]="{'color': 'white', 'position': 'fixed',
+  'left': '10px',
+   'bottom': '0',
+'height':'30px','text-align':'center','vertical-align': 'middle'}"> <i class="fa fa-info-circle"></i> Hotline: 19006142 ext(301)</span> -->

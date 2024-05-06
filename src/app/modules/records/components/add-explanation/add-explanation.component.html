@@ -1,0 +1,84 @@
+<div class="modal-header">
+    <h2 class="modal-title" style="font-weight: bold">CẬP NHẬT NỘI DUNG GIẢI TRÌNH</h2>
+    <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="panel panel-default" style="height:auto">
+        <div class="panel-body">
+            <div class="row col-md-12">
+                <dx-text-area placeholder="Nội dung giải trình" [(value)]="content_explanation"></dx-text-area>
+            </div>
+            <br>
+            <div class="row col-md-12">
+                <p style="color:red">(Lưu ý: Đặt tên file đính kèm không dấu)
+                </p>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="file" id="file" (change)="handleFileInput($event)" style="color: transparent" multiple>
+                </div>
+                <div class="col-md-9">
+                    <div *ngFor="let file of fileselected">
+                        <img src='assets/img/icons/attach_file.gif' />
+                        <a target="_blank" style="word-break: break-word;">{{file.name}}</a>
+                        <img src='assets/img/icons/square_delete.png' (click)="remove(file.name)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-12" *ngIf="checkedit==true">
+                    <div *ngFor="let file of listfile_detail">
+                        <div *ngFor="let file_child of file">
+                            <img src='assets/img/icons/attach_file.gif' />
+                            <a style="color:dodgerblue;cursor:pointer;word-break: break-word;" (click)="openfile(file_child.filenameFull)">{{file_child.fileName}}</a>
+                            <img style="cursor: pointer;" src='assets/img/icons/square_delete.png' (click)="removeonserver(arritem,file_child.filenameFull,file_child.urlFile)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="table-container">
+        <table class="table table-bordered" id="table">
+            <thead>
+                <tr>
+                    <th style="width:80px">Ngày </th>
+                    <th>Nội dung</th>
+                    <th style="width:150px">File đính kèm</th>
+                    <th style="width:67px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of items">
+                    <td style="width:80px" *ngIf="item.is_return!='1'">{{item.created_at | date : "dd/MM/y H:mm:ss"}}
+                    </td>
+                    <td style="text-align: justify" *ngIf="item.is_return!='1'" [innerHTML]="item.explanation=='null' ? '': item.explanation">
+                        </td>
+                    <td style="width:150px">
+                        <div *ngFor="let file of item.listfile_arr">
+                            <div *ngFor="let file_child of file">
+                                <img src='assets/img/icons/attach_file.gif' />
+                                <a style="color:dodgerblue;cursor:pointer" (click)="openfile(file_child.filenameFull)">{{file_child.fileName}}</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="width:67px;" *ngIf="item.is_return!='1'">
+                        <button id="sua" (click)="edit(item)">Sửa </button>
+                        <!-- <span style="color:#0099e6;"> | </span> -->
+                        <button id="xoa" (click)="delete(item)">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal-footer">
+        <dx-button text="Ghi" type="default" validationGroup="evaluationValidate" [useSubmitBehavior]="true" (click)='onupload()'>
+        </dx-button>
+        <dx-button text="Quay lại" (click)="bsModalRef.hide()">
+        </dx-button>
+    </div>

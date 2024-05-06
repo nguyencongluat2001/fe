@@ -1,0 +1,23 @@
+.dialog{
+    width: 350px;
+}
+button {
+    margin-left: 5px;
+}
+.modal-content{
+    color: #000;
+}
+.modal-header {
+    // color: #fff;
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+    // background-color: #3c8dbc;
+}
+.modal-header>h4 {
+    font-weight: bold;
+}
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    font-family: Source Sans Pro, sans-serif;
+}

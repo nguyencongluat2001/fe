@@ -1,0 +1,31 @@
+.row{
+    margin-bottom: 2px; 
+}
+#name{
+    font-weight: bold; 
+    // text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+::ng-deep .dx-treelist .dx-column-lines > td{
+    border-top: 1px solid #ddd;
+}
+
+::ng-deep .dx-treelist-rowsview{
+    border: none;
+}
+::ng-deep .dx-treelist-borders > .dx-datagrid-headers{
+    border-top:none;
+}
+::ng-deep .app-footer{
+    border: none;
+}
+#table{
+    border: none;
+}
+#table-container{
+    border: none;
+}
+::ng-deep .dx-freespace-row td {
+    border-color: transparent!important
+}

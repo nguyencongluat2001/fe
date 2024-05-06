@@ -1,0 +1,25 @@
+.form-recent-post{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.item-recent-post{
+    display: -webkit-inline-box;
+}
+.item-recent-post .img img{
+    width: 80px;
+}
+.item-recent-post .content{
+    margin-left: .5rem;
+}
+.item-recent-post .content .title{
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;  /* số dòng hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@media (max-width: 450px) {
+    .col-lg-4.col-md-6{
+        margin-bottom: 2rem;
+    }
+}

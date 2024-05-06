@@ -1,0 +1,42 @@
+<div id="table-container">
+	<div id="table" class="table-responsive pmd-card pmd-z-depth">
+		<dx-tree-list #grid id="tasks" [dataSource]="listData" keyExpr="id" parentIdExpr="parrent_id" [columnAutoWidth]="true" [wordWrapEnabled]="true"
+			(onRowValidating)="checkValidating($event)" (onSelectionChanged)="selectEvaluation($event)" (onRowInserted)="insertRow($event)"
+			(onRowUpdated)="updateRow($event)" (onRowPrepared)="onRowPrepared($event)" (onInitNewRow)="initNewRow($event)"
+			[expandedRowKeys]="onchangetree"   [showRowLines]="true" >
+			<dxo-filter-row [visible]="true"></dxo-filter-row>
+			<dxo-selection mode="multiple">
+			</dxo-selection>
+			<!-- <dxo-editing mode="row" [allowAdding]="true" [allowUpdating]="true">
+			</dxo-editing> -->
+			<dxi-column caption="Lĩnh vực/Tiêu chí/Tiêu chí thành phần" dataField="name" >
+				<dxi-validation-rule type="required" message="Tên Tiêu chí/Tiêu chí thành phần không được để trống"></dxi-validation-rule>
+			</dxi-column>
+			<!-- <dxi-column [width]="150" caption="Loại tiêu chí" dataField="enquire" message="Loại tiêu chí không được để trống" alignment="center">
+				<dxo-lookup [dataSource]="statusesData" valueExpr="code" displayExpr="name">
+					</dxo-lookup>
+				<dxi-validation-rule type="required"></dxi-validation-rule>
+			</dxi-column> -->
+			<dxi-column [width]="150" caption="Đơn vị tính" dataField="calculation_unit" alignment="right">
+				<dxo-lookup [dataSource]="calculationsData" valueExpr="code" displayExpr="name">
+				</dxo-lookup>
+			</dxi-column>
+			<dxi-column [width]="150" caption="Tiêu chuẩn" dataField="target" alignment="right"></dxi-column>
+
+			<dxi-column alignment="left" [width]="150" cellTemplate="self_assessment_results" dataField="self_assessment_results" dataType="string" caption="Kết quả tự đánh giá">
+				<div *dxTemplate="let cell of 'self_assessment_results'">
+					<a  *ngIf="cell.data['enquire'] == 'MULTICHOICESCALE'" class="dx-link dx-link-add" (click)="showCnotedetail(cell.data)">
+						<i class="fa fa-edit fa-hg" style="float: right;"></i>
+					</a>
+					<div id="item22" ><span>&nbsp;</span> {{cell.data['self_assessment_results']}}</div>
+				</div>
+			</dxi-column>
+
+			<!-- <dxi-column [width]="150" caption="Kết quả tự đánh giá" dataField="self_assessment_results" alignment="right"></dxi-column> -->
+			<dxi-column [width]="200" dataField="content_explanation" caption="Tài liệu minh chứng giải trình" cellTemplate="content_explanation" alignment="center" [allowEditing]="false"></dxi-column>
+			<div *dxTemplate="let d of 'content_explanation'">
+				<app-explanation [data]='d.data'></app-explanation>
+			</div>
+		</dx-tree-list>
+	</div>
+</div>
