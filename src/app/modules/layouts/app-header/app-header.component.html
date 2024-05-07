@@ -1,25 +1,24 @@
 <header class="app-header navbar {{class_header}}">
-  <img style="width: 8%;" src="assets/img/logo.png" class="img-avatar" alt="admin@bootstrapmaster.com" />
+  <!-- <img style="width: 8%;" src="assets/img/logo.png" class="img-avatar" alt="admin@bootstrapmaster.com" /> -->
+  <!-- <div class="hty-header-banner d-md-down-none">
+  </div> -->
 
-  <div class="hty-header-banner d-md-down-none">
-    <span style="color:aliceblue;font-size:22px;font-weight: 600;">KHOA CHẨN ĐOÁN HÌNH ẢNH</span>
-  </div>
-  <ul class="nav navbar-nav ml-auto" style="margin-right: 12px;">
-    <li class="nav-item dropdown" dropdown placement="bottom right">
-      <div class="infor-user" style="display: flex;">
-          <div>
-            <button mat-menu-item>
-              <a class="dropdown-item" (click)="changePassword()">
-                <i class="fa fa-shield"></i> Đổi mật khẩu</a>
-            </button>
-          </div>
-          <div>
-            <button mat-menu-item>
-              <a class="dropdown-item" (click)="logout()">
-                <i class="fa fa-lock"></i> Thoát</a>
-            </button>
-          </div>
+  <span style="color:aliceblue;font-size:22px;font-weight: 600;"><img src="assets/img/favicon.ico" class="img-avatar" alt="admin@bootstrapmaster.com" /> KHOA CHẨN ĐOÁN HÌNH ẢNH</span>
+
+  <div>
+    <div class="infor-user" style="display: flex;width: 10%;">
+      <div>
+        <button mat-menu-item style="background: #12dc51;border: 1px;">
+          <a class="dropdown-item" (click)="changePassword()" style="color: aliceblue;">
+            <i style="color: aliceblue;" class="fa fa-key"></i> Đổi mật khẩu</a>
+        </button>
       </div>
-    </li>
-  </ul>
+      <div>
+        <button mat-menu-item style="background: #12dc51;border: 1px;">
+          <a class="dropdown-item" (click)="logout()" style="color: aliceblue;">
+            <i style="color: aliceblue;" class="fa fa-sign-out"></i> Thoát</a>
+        </button>
+      </div>
+  </div>
+  </div>
 </header>

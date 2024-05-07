@@ -62,13 +62,66 @@
         </div>
       </section>
       <!-- End Banner Hero -->
-      <div class="pull-right button-panel">
-        <dx-button (onClick)="evaluation()" id="define" [disabled]="!selectedItems.length || !selectedItem.length" icon="fa fa-sitemap" 
-          text="Xem kết quả thực tế ảo">
-        </dx-button>
-        <dx-button (onClick)="permission()" id="define" [disabled]="!selectedItems.length" icon="fa fa-user" 
-          text="Xem ảnh">
-        </dx-button>
+      
+      <div style="width: 100%;height: 100%;border-color: #000 !important;border: 1px solid #ccc !important;">
+        <div style="width: 100%;height: 50px;background: #12dc51;">
+          <!-- <br>
+          <span style="color: #ffffff;font-size: 20px;font-weight: 700;padding-left: 10px;"> Chụp CHT não, mạch não</span> -->
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-12 text-start" >
+                <div class="row g-lg-5">
+                    <!-- Start Recent Work -->
+                    <div class="col-md-9">
+                        <div style="border-radius: 5px;padding: 16px;font-size: 16px;font-weight: 700;color: white;" class="recent-work-content text-start">
+                          <span>Chụp CHT não, mạch não</span>
+                        </div>
+                    </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-3">
+                      <div style="border-radius: 5px;padding: 16px;font-size: 16px;font-weight: 700;color: white;" class="recent-work-content text-start">
+                        <span>12:15:30 08-05-2024</span>
+                      </div>
+                    </div>
+                    <!-- End Recent Work -->
+                </div>
+            </div>
+           </div>
+        </div>
+        <div style="color: rgba(0, 0, 0, .85);">
+          <div class="row d-flex align-items-center">
+            <div class="col-lg-12 text-start" >
+                <div class="row g-lg-5">
+                    <!-- Start Recent Work -->
+                    <div class="col-md-6">
+                        <div style="border-radius: 5px;padding: 10px;" class="recent-work-content text-start text-dark">
+                          Kỹ thuật:
+                          <br>
+
+                          Thăm khám cộng hưởng từ sọ não - mạch não với các chuỗi xung axial FLAIR, Diffusion; coronal T2; sagital T1W, chuỗi xung mạch 3D TOF không tiêm Gadolinium.
+                          Mô tả hình ảnh:
+                      </div>
+                    </div>
+                    <div class="col-md-3"> </div>
+                    <!-- End Recent Work -->
+                    <!-- Start Recent Work -->
+                    <div class="col-md-3">
+                      <div style="border-radius: 5px;" class="recent-work-content">
+                        <dx-button style="opacity: 1 !important;" (onClick)="evaluation()" id="define" [disabled]="!selectedItems.length || !selectedItem.length" icon="fa fa-sitemap" 
+                          text="Xem kết quả thực tế ảo">
+                        </dx-button>
+                        <dx-button style="opacity: 1 !important;" (onClick)="permission()" id="define" [disabled]="!selectedItems.length" icon="fa fa-user" 
+                          text="Xem ảnh">
+                        </dx-button>
+                      </div>
+                    </div>
+                    <!-- End Recent Work -->
+                </div>
+            </div>
+           </div>
+        </div>
+        
       </div>
+      
       
 </div>
