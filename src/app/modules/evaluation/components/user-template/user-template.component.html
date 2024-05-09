@@ -1,9 +1,0 @@
-<div *ngIf="data.type =='user'">
-  <div [innerHTML]="data.data"></div>
-</div>
-<div *ngIf="data.type =='permission'">
-  <div [innerHTML]="data.data"></div>
-</div>
-<div *ngIf="data.type ==''" style="margin: auto">
-  <dx-button (onClick)="permissioncomponent.deletePermission(data.data)" icon="fa fa-trash" text="Xóa"></dx-button>
-</div>

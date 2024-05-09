@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/catch';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Library } from 'src/app/shared/library/main';
@@ -44,28 +42,9 @@ export class ApiService {
     urlParams.append('method', 'add');
     let options = { headers: this.headers, search: urlParams 
     };
-    // return this.http.post(this.baseUrl + url, data, options)
-    // .map(res => res.json());
     return this.http.post<any>(this.baseUrl + url, data, options).pipe((data) => {
       return data;
     });
-  }
-
-  getTypeUnits(){
-    let typeUnit = [{
-      "code": "QUAN_HUYEN",
-      "name": "Quận huyện"
-    },{
-      "code": "SO_NGHANH",
-      "name": "Sở nghành"
-    },{
-      "code": "PHUONG_XA",
-      "name": "Phường xã"
-    },{
-      "code": "All",
-      "name": "Tất cả"
-    }];
-    return typeUnit;
   }
 
   

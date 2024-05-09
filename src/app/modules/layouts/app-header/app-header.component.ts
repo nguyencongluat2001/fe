@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter, ViewEncapsulation } from '@angular/cor
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ChangePasswordComponent } from '../change-password/change-password.component';
+import { ChangePasswordComponent } from '../../evaluation/change-password/change-password.component';
 
 @Component({
   selector: 'app-header',

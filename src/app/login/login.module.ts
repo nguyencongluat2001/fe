@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangePasswordComponent } from '../modules/evaluation/change-password/change-password.component';
 
 
 
@@ -17,6 +18,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule
   ],
   providers: [HttpService],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent,ChangePasswordComponent],
 })
 export class LoginModule { }

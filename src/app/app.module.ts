@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { DxButtonModule, DxListModule } from 'devextreme-angular';
+import { DxFormModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +18,7 @@ import { DxButtonModule, DxListModule } from 'devextreme-angular';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
+    DxFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

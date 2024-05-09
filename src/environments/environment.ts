@@ -4,12 +4,8 @@
 // build: ng build --prod --deploy-url /TopPro/demo/ --base-href /TopPro/demo/
 export const environment = {
     production: false,
-    //API_URL: 'http://10.20.5.146:8108/api/',
-    //API_BASE: 'http://10.20.5.146:8108/',
-    // API_URL: 'http://127.0.0.1:8888/api/',
-    // API_BASE: 'http://127.0.0.1:8888/',
-    API_URL: 'http://10.20.5.146:8888/api/',
-    API_BASE: 'http://10.20.5.146:8888/',
+    API_URL: 'http://118.70.182.89:89/api/',
+    API_BASE: 'http://118.70.182.89:89/',
 };
 
 /*

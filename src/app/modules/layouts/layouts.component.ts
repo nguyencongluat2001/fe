@@ -1,5 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
-import { AppSidebarNavComponent } from './app-sidebar';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-layouts',
@@ -9,7 +8,6 @@ import { AppSidebarNavComponent } from './app-sidebar';
 export class LayoutsComponent {
   isShow: boolean = false;
   topPosToStartShowing = 300;
-  @ViewChild(AppSidebarNavComponent) _navrbar: AppSidebarNavComponent;
   @HostListener('window:scroll')
 
   checkScroll() {
@@ -26,8 +24,5 @@ export class LayoutsComponent {
       left: 0,
       behavior: 'smooth' 
     });
-  }
-  changesidebar(project){
-    this._navrbar.changesidebar(project);
   }
 }
