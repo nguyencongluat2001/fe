@@ -48,19 +48,10 @@ export class IndexComponent implements OnInit {
     Library.hideloading();
   }
   getAll() {
-    var group = 'QUAN_HUYEN'
-    if(this.route.url == '/system/evaluation_commune'){
-      var group = 'PHUONG_XA'
-    }
-    if(this.route.url == '/system/evaluation_village'){
-      var group = 'THON_BAN'
-    }
     let parram = {
-      'group':group
+      'mabn':JSON.parse(localStorage.getItem('username')),
     };
-    // set group
-    this.EvaluationModel.setGroup(group);
-    this.HttpService.getMethods("PACS/ViewChiDinh?mabn=144563", parram).subscribe(
+    this.HttpService.getMethods("getTKQ", parram).subscribe(
         result => {
           this.Evaluations = result.data;
         },

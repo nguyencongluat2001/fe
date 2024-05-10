@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 // build: ng build --prod --deploy-url /TopPro/demo/ --base-href /TopPro/demo/
 export const environment = {
-    production: false,
-    API_URL: 'http://118.70.182.89:89/api/',
-    API_BASE: 'http://118.70.182.89:89/',
+    production: true,
+    API_URL: 'https://medhanoi.com/api/',
+    API_BASE: 'https://medhanoi.com/',
 };
 
 /*

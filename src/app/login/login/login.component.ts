@@ -49,18 +49,18 @@ export class LoginComponent implements OnInit {
         password: this.loginForm.value.password,
       }
       console.log(params);
-      this.HttpService.postMethods('PACS/login', params).subscribe(
+      this.HttpService.getMethods('login', params).subscribe(
         result => {
-          if(result.data.code == 200){
-            localStorage.setItem('username', result.loginModel.loginModel);
+          if(result.status == true){
+            localStorage.setItem('username', result.loginModel.username);
             var router = this.returnUrl;
             router = '/system/index';
             this.router.navigate([router]);
-          }if(result.data.code == 400){
-            Library.notify(result.data.message, 'error');
+          }if(result.status != true){
+            Library.notify('Thông tin cung cấp chưa chính xác', 'error');
           }
           else{
-            this.snackBar.open(result.message, 'Lỗi', {duration: 4000});
+            // this.snackBar.open(result.message, 'Lỗi', {duration: 4000});
           }
         }
       );
