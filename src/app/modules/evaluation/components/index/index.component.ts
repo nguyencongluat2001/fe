@@ -14,7 +14,8 @@ import { MultipleChoiceModel } from '../../models/MultipleChoiceModel';
 })
 export class IndexComponent implements OnInit {
 
-  Evaluations: any;
+  benhnhan: any;
+  chidinhct:any;
   bsModalRef: BsModalRef;
   txt_search = '';
   listsGroup: any;
@@ -23,6 +24,7 @@ export class IndexComponent implements OnInit {
   users: any;
   c: any;
   pageEnabled: boolean = false;
+  display:any;
   constructor(
     private HttpService:HttpService,
     public EvaluationModel: EvaluationModel,
@@ -53,7 +55,8 @@ export class IndexComponent implements OnInit {
     };
     this.HttpService.getMethods("getTKQ", parram).subscribe(
         result => {
-          this.Evaluations = result.data;
+          this.benhnhan = result.results.benhnhan;
+          this.chidinhct = result.results.chidinhct;
         },
         (error) => {
           Library.hideloading();
@@ -65,5 +68,11 @@ export class IndexComponent implements OnInit {
   }
   xemanh(){
 
+  }
+  tab(e){
+    console.log(e)
+    // if(e == 1){
+      e = 'block';
+    // }
   }
 }

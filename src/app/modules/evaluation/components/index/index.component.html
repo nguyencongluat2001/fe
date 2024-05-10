@@ -10,49 +10,49 @@
                         <!-- Start Recent Work -->
                         <div class="col-md-4">
                             <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Họ tên: <span style="font-weight: 600;">MAI THỊ HIỀN</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Họ tên: <span style="font-weight: 600;">{{benhnhan.tenbn}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Giới tính: <span style="font-weight: 600;">NỮ</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Giới tính: <span style="font-weight: 600;">{{benhnhan.gioitinh}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                           <!-- Start Recent Work -->
                           <div class="col-md-4">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Ngày sinh: <span style="font-weight: 600;">20/10/1990</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Ngày sinh: <span style="font-weight: 600;">{{benhnhan.namsinh}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã số PID:  <span style="font-weight: 600;">2310000235</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã số PID:  <span style="font-weight: 600;">{{benhnhan.mabn}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                         <!-- Start Recent Work -->
                         <div class="col-md-4">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã BHYT : <span style="font-weight: 600;">BHYT-0018930</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Mã BHYT : <span style="font-weight: 600;">{{benhnhan.mabhyt}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                           <!-- Start Recent Work -->
                           <div class="col-md-4">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Số điện thoại: <span style="font-weight: 600;">09876356162</span></h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Số điện thoại: <span style="font-weight: 600;">{{benhnhan.dienthoai}}</span></h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
                           <!-- Start Recent Work -->
                           <div class="col-md-12">
                           <div style="border-radius: 5px" class="recent-work-content text-start text-dark">
-                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Địa chỉ: <span style="font-weight: 600;">Đông Tiến, Đông Sơn, Thanh Hóa, Việt Nam</span> </h3>
+                              <h3 class="card-title" style="padding:10px;font-size: 15px !important;font-family: auto;font-size: 18px !important;"><i class="fas fa-dollar-sign"></i> Địa chỉ: <span style="font-weight: 600;">{{benhnhan.diachi}}</span> </h3>
                           </div>
                         </div>
                         <!-- End Recent Work -->
@@ -63,48 +63,49 @@
       </section>
       <!-- End Banner Hero -->
       
-      <div style="width: 100%;height: 100%;border-color: #000 !important;border: 1px solid #ccc !important;">
+      <div *ngFor="let data of chidinhct" style="width: 100%;height: 100%;border-color: #000 !important;border: 1px solid #ccc !important;">
         <div style="width: 100%;height: 50px;background: #12dc51;">
           <!-- <br>
           <span style="color: #ffffff;font-size: 20px;font-weight: 700;padding-left: 10px;"> Chụp CHT não, mạch não</span> -->
           <div class="row d-flex align-items-center">
             <div class="col-lg-12 text-start" >
                 <div class="row g-lg-5">
-                    <!-- Start Recent Work -->
                     <div class="col-md-9">
                         <div style="border-radius: 5px;padding: 16px;font-size: 16px;font-weight: 700;color: white;" class="recent-work-content text-start">
-                          <span>Chụp CHT não, mạch não</span>
+                          <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                          <span> {{data.tendichvu}}</span>
                         </div>
                     </div>
-                    <!-- End Recent Work -->
-                    <!-- Start Recent Work -->
                     <div class="col-md-3">
                       <div style="border-radius: 5px;padding: 16px;font-size: 16px;font-weight: 700;color: white;" class="recent-work-content text-start">
-                        <span>12:15:30 08-05-2024</span>
+                          <span>{{data.ngaychidinh}}</span>
                       </div>
                     </div>
-                    <!-- End Recent Work -->
                 </div>
             </div>
            </div>
         </div>
-        <div style="color: rgba(0, 0, 0, .85);">
+        <div style="color: rgba(0, 0, 0, .85);display: block;">
           <div class="row d-flex align-items-center">
             <div class="col-lg-12 text-start" >
                 <div class="row g-lg-5">
-                    <!-- Start Recent Work -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="padding-left: 40px;padding-bottom: 25px;">
                         <div style="border-radius: 5px;padding: 10px;" class="recent-work-content text-start text-dark">
-                          Kỹ thuật:
-                          <br>
-
-                          Thăm khám cộng hưởng từ sọ não - mạch não với các chuỗi xung axial FLAIR, Diffusion; coronal T2; sagital T1W, chuỗi xung mạch 3D TOF không tiêm Gadolinium.
-                          Mô tả hình ảnh:
-                      </div>
+                          <div [innerHTML]="data.noidunghtml"></div>
+                        </div>
+                        <br>
+                        <div>
+                          <div style="padding: 5px;">Kết luận: <span style="font-weight: 600;">{{data.ketluan}}</span></div><br>
+                          <div style="padding: 5px;">Khuyến nghị: <span style="font-weight: 600;">{{data.denghi}}</span></div><br>
+                          <div style="padding: 5px;">Thời gian thực hiện: <span style="font-weight: 600;">{{data.ngaychidinh}}</span></div> <br>
+                          <div style="padding: 5px;">Bác sĩ chỉ định: <span style="font-weight: 600;">{{data.bschidinh}}</span></div> <br>
+                          <div style="padding: 5px;">Thời gian duyệt: <span style="font-weight: 600;">{{data.ngayduyetketqua}}</span></div> <br>
+                          <div style="padding: 5px;">Bác sĩ duyệt: <span style="font-weight: 600;">{{data.bsduyetketqua}}</span> </div><br>
+                          <div style="padding: 5px;">Bác sĩ đọc: <span style="font-weight: 600;">{{data.bsdocketqua}}</span> </div><br>
+                          <div style="padding: 5px;">Kỹ thuật viên: <span style="font-weight: 600;">{{data.ktvthuchien}}</span></div> <br>
+                        </div>
                     </div>
                     <div class="col-md-3"> </div>
-                    <!-- End Recent Work -->
-                    <!-- Start Recent Work -->
                     <div class="col-md-3">
                       <div style="border-radius: 5px;" class="recent-work-content">
                         <dx-button style="opacity: 1 !important;" (onClick)="xemketqua()" id="define" icon="fa fa-sitemap" 
@@ -115,13 +116,15 @@
                         </dx-button>
                       </div>
                     </div>
-                    <!-- End Recent Work -->
                 </div>
             </div>
            </div>
         </div>
-        
       </div>
-      
-      
 </div>
+<!-- <div *ngFor="let data of chidinhct">
+  <button type="button" (click)='tab(data.idchidinhct)' class="collapsible">Open Collapsible</button>
+  <div [ngStyle]="{'display': data.idchidinhct}" class="content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+</div> -->
