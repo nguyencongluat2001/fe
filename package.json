@@ -5,8 +5,8 @@
     "ng": "ng",
     "serve": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng serve --host 0.0.0.0",
     "start": "ng serve --host 0.0.0.0 --disable-host-check",
-    "build": "ng build --deploy-url /general/ --base-href /general/",
-    "build:prod": "ng build --prod --deploy-url /general/ --base-href /general/",
+    "build": "ng build --deploy-url / --base-href /",
+    "build:prod": "ng build --prod --deploy-url / --base-href /",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
