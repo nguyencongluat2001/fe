@@ -7,8 +7,8 @@ const routes: Routes = [
 		path: '',
 		loadChildren: () =>
 			// import('./modules/client.module').then((m) => m.ClientModule), canActivate: [SystemGuard]
-		//    import('./modules/client.module').then((m) => m.ClientModule)
-		   import('./login/login.module').then((m) => m.LoginModule),
+		   import('./modules/client.module').then((m) => m.ClientModule)
+
 	},
 	{
 		path: 'login',
